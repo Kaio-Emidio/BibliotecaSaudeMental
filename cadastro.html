@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-    <form>
+    <form action="/cadastro_de_usuario" method="post">
     <label for="nome">Nome:</label><br>
     <input type="text" id="nome" name="nome_user" placeholder="Digite seu nome"><br>
 
@@ -23,6 +23,8 @@
 
     <label for="telefone">Telefone:</label> <br>
     <input type="tel" name="Número_telefone" id="Telefone_usuario" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" placeholder="(XX) XXXXX-XXXX"> <br>
+
+    <input type="submit" value="Confirmar">
     </form>
     </div>
 </body>
