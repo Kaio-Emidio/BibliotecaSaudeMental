@@ -85,19 +85,19 @@ header {
   }
 
   .card {
-    width: 300px;
+    max-width: 300px;
     border: 1px solid #ccc;
     border-radius: 30px;
     box-shadow: 2px 2px 5px #FFB726(0, 0, 0, 0.2);
     overflow: hidden;
     margin: 16px;
     flex-direction: row;
-    background-color: #FFB726;
+    background-color: #fae795;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border: none;
     text-align: center;
-    max-height: 550px;
+    max-height: 600px;
   }
 
   .card:hover { 
@@ -116,3 +116,10 @@ header {
   }
 
   
+  .button1 {
+    background-color: #FFB726  ; /* Cor de fundo */
+    color: rgb(22, 13, 13); /* Cor do texto */
+    padding: 5px 1px;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    border-radius: 5px; /* Bordas arredondadas */
+  }
