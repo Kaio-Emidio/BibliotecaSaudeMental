@@ -6,29 +6,19 @@ app = Flask(__name__)
 # Configuração do banco de dados
 db_config = {
     'host': 'localhost',
-    'user': 'root',        # altere se necessário
-    'password': 'labinfo',  # coloque sua senha do MySQL
+    'user': 'root',
+    'password': 'labinfo',
     'database': 'VideosSite'
 }
 
 # Rota principal
 @app.route('/')
 def index():
-    try:
-        conexao = mysql.connector.connect(**db_config)
-        cursor = conexao.cursor(dictionary=True)
+    return render_template('index.html')
 
-        # Pegando o primeiro vídeo do banco
-        cursor.execute("SELECT * FROM Video LIMIT 1;")
-        video = cursor.fetchone()
-
-        cursor.close()
-        conexao.close()
-
-        return render_template('index.html', video=video)
-
-    except Exception as e:
-        return f"Erro ao conectar ao banco de dados: {e}"
+@app.route('/login-usuario')
+def cadastro_usuario():
+    return render_template('login_usuario.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
