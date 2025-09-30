@@ -10,7 +10,7 @@ app = Flask(__name__)
 #     'password': 'labinfo',
 #     'database': 'VideosSite'
 # }
- 
+
 # Rota principal
 @app.route('/')
 def index():
