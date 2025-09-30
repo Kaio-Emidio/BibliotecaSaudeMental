@@ -1,7 +1,7 @@
 body{
     background-color: #535680;
 }
-
+/* agua */
 
 header {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -25,10 +25,11 @@ header {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid #084068;
     position: absolute;
-    left: 50px;
     justify-content: flex-start;
+    background-color: #c58607;
+    margin-top: 5px;
+    margin-left: 15px;
 }
 
   ul {
@@ -42,7 +43,7 @@ header {
   }
    
   ul li a {
-    color: #F4EEA9;
+    color: #084068;
     text-align: center;
     padding: 14px 15px;
     text-decoration: none;
@@ -51,16 +52,6 @@ header {
   ul li a:hover {
     background-color: #c0ba74;
   }
-
-.logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #084068;
-    position: absolute;
-    left: 50px;
-    justify-content: flex-start;
-}
 
 
   .hero{
@@ -73,12 +64,12 @@ header {
     height: 100vh;
   }
 
-  .sobre{
+  .sobre , .acess-conteudos , .pod-title , .livros-title , .videos-title{
     text-align: center;
     display: flex;
     flex-direction: column;
     align-self: center;
-
+    color: #030107;
   }
 
   .text-sobre{
@@ -93,10 +84,42 @@ header {
     
   }
 
-  .acess-conteudos{
+  .card {
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px #FFB726(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 16px;
+    flex-direction: row;
+    background-color: #fae795;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border: none;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+    max-height: 600px;
+  }
 
+  .card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+}
+  
+  .container {
+    margin-left: -16px; 
+    margin-right: -16px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 700px;
+    flex-direction: row;
+  }
+
+  
+  .button1 {
+    background-color: #FFB726  ; /* Cor de fundo */
+    color: rgb(22, 13, 13); /* Cor do texto */
+    padding: 5px 1px;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    border-radius: 5px; /* Bordas arredondadas */
   }
