@@ -20,5 +20,13 @@ def index():
 def cadastro_usuario():
     return render_template('login_usuario.html')
 
+@app.route('/cadastro-usuario')
+def cadastro_usuario():
+    return render_template('cadastro.html')
+
+@app.route('/cadastro-de-conteudo')
+def cadastro_conteudo():
+    return render_template('cadastro_conteudo.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
