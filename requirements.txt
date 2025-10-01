@@ -1,3 +1,4 @@
+
 blinker==1.9.0
 click==8.3.0
 colorama==0.4.6
@@ -9,6 +10,7 @@ Jinja2==3.1.6
 MarkupSafe==3.0.3
 mysql-connector-python==9.4.0
 platformdirs==4.1.0
+python-dotenv==1.1.1
 virtualenv==20.25.0
 virtualenvwrapper-win==1.2.7
 Werkzeug==3.1.3
