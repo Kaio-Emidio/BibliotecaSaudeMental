@@ -5,62 +5,53 @@ body{
 }
 
 header {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    background: #FFB726;
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-.header-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding-left: 20px;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #084068;
-    position: absolute;
-    left: 50px;
-    justify-content: flex-start;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background: #FFB726;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: none;
-    display: flex;
-    margin-left: auto;
-  }
-   
-  ul li a {
-    color: #F4EEA9;
-    text-align: center;
-    padding: 14px 15px;
-    text-decoration: none;
-  }
-
-  ul li a:hover {
-    background-color: #c0ba74;
-  }
+.header-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 20px;
+}
 
 .logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #084068;
-    position: absolute;
-    left: 50px;
-    justify-content: flex-start;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  justify-content: flex-start;
+  background-color: #c58607;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: none;
+  display: flex;
+  margin-left: auto;
+}
+ 
+ul li a {
+  color: #084068;
+  text-align: center;
+  padding: 14px 15px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #c0ba74;
 }
 
 .caixa_form{
@@ -72,17 +63,39 @@ header {
 
 form {
   background-color: #FFB726;
-  padding: 50px;
+  padding: 25px;
   border-radius: 20px;
   align-content: center;
   justify-items: center;
 }
 
-.usuario{
-  color: black;
-
+.inputs input{
+  border: solid 1px #084068;
+  margin: 5px 0px 5px;
+  padding: 10px;
+  background-color: transparent;
 }
 
-.botoes input{
+.submit{
   background-color: #084068;
+  padding: 10px 15px;
+  margin: 5px 5px;
+  border-radius: 20px;
+  color: white;
+  transition: 0.3s;
+}
+
+.cadastro {
+  background-color: transparent;
+  padding: 5px 10px;
+  margin: 5px 5px;
+  border: none;
+  border-radius: 20px;
+  color: #404263;
+  transition: 0.3s;
+}
+
+.submit:hover, .cadastro:hover {
+  background-color: #535680;
+  color: white;
 }

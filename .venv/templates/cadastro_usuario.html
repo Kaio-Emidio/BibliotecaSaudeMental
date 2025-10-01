@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="static\cadastro_usuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
+        <div class="header-container">
+            <nav class="navegador"></nav>
+            <ul>
+            <li><a href="/"><i><i class="fa-solid fa-house-chimney"></i>  </i>Home</a></li>
+            <li><a href="#"><i class="fa-solid fa-address-book"></i>  Contato</a></li>
+            <li><a href="#"><i class="fa-solid fa-brain"></i>  Sobre</a></li>
+            <li><a href="cadastro_conteudo.html"><i class="fa-solid fa-right-to-bracket"></i>  Entrar</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="container">
+        <form action="/cadastro-de-usuario-concluido" method="post">
+            <div>
+                <h1>Cadastro</h1>
+            </div>
+            <div class="inputs">
+                <input type="text" name="nome_user" id="nome" placeholder="Nome" required><br>    
+                <input type="text" name="Usuario" id="Usuario" placeholder="Usuário" required> <br>
+                <input type="password" name="Senha" id="senha" placeholder="Senha" required> <br>    
+                <input type="email" name="Email_do_User" id="email" placeholder="Email"> <br>
+                <input type="tel" name="Número_telefone" id="Telefone_usuario" placeholder="Telefone (XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}"> <br>
+
+            </div>
+            <div>
+                <input type="submit" value="Confirmar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
