@@ -1,15 +1,23 @@
-from flask import Flask, render_template
-# import mysql.connector
+from flask import Flask, render_template, request
+from mysql.connector import connection
+import os
 
 app = Flask(__name__)
 
-# Configuração do banco de dados
-# db_config = {
-#     'host': 'localhost',
-#     'user': 'root',
-#     'password': 'labinfo',
-#     'database': 'VideosSite'
-# }
+cnx = connection.MySQLConnection(
+        user = 'root',
+        password = 'labinfo',
+        database = 'biblioteca_bd',
+        host = '127.0.0.1'
+    )
+
+def InserirAlterarRemover(sql, dados):
+    cursor = cnx.cursor()
+
+    cursor.execute(sql, dados)
+    cnx.commit()
+
+    cnx.close()
 
 # Rota principal
 @app.route('/')
@@ -31,6 +39,24 @@ def cadastro_usuario():
 
 @app.route('/cadastro-de-usuario-concluido', methods=['POST'])
 def conf_cad_user():
+    nome = request.form.get('nome_user')
+    usuario = request.form.get('Usuario')
+    senha = request.form.get('Senha')
+    email = request.form.get('Email_do_User')
+    telefone = request.form.get('Número_telefone')
+
+    if email == '':
+        email = None
+    if telefone == '':
+        telefone = None
+
+    sql = 'INSERT INTO usuario (Nome, Usuario, Senha, Email, Telefone) \
+        VALUES (%s, %s, %s, %s, %s)'
+    
+    dados = (nome, usuario, senha, email, telefone)
+
+    InserirAlterarRemover(sql, dados)
+
     return render_template('login_usuario.html')
 
 @app.route('/cadastro-de-conteudo')
