@@ -20,9 +20,18 @@ def index():
 def login_usuario():
     return render_template('login_usuario.html')
 
+@app.route('/login-concluido', methods=['POST'])
+def conf_login():
+    # Adicionar a verificação de usuário
+    return render_template('index.html')
+
 @app.route('/cadastro-usuario')
 def cadastro_usuario():
-    return render_template('cadastro.html')
+    return render_template('cadastro_usuario.html')
+
+@app.route('/cadastro-de-usuario-concluido', methods=['POST'])
+def conf_cad_user():
+    return render_template('login_usuario.html')
 
 @app.route('/cadastro-de-conteudo')
 def cadastro_conteudo():

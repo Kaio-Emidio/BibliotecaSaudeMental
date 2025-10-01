@@ -63,27 +63,39 @@ ul li a:hover {
 
 form {
   background-color: #FFB726;
-  padding: 50px;
+  padding: 25px;
   border-radius: 20px;
   align-content: center;
   justify-items: center;
 }
 
-.usuario{
-  color: black;
-
+.inputs input{
+  border: solid 1px #084068;
+  margin: 5px 0px 5px;
+  padding: 10px;
+  background-color: transparent;
 }
 
-.botoes input{
+.submit{
   background-color: #084068;
   padding: 10px 15px;
   margin: 5px 5px;
   border-radius: 20px;
   color: white;
-  /* border: none; */
   transition: 0.3s;
 }
 
-.botoes input:hover {
-  background-color: #6C6FA8;
+.cadastro {
+  background-color: transparent;
+  padding: 5px 10px;
+  margin: 5px 5px;
+  border: none;
+  border-radius: 20px;
+  color: #404263;
+  transition: 0.3s;
+}
+
+.submit:hover, .cadastro:hover {
+  background-color: #535680;
+  color: white;
 }
