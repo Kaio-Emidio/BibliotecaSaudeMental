@@ -86,7 +86,7 @@ ul li a:hover {
   flex-direction: column;
   align-self: center;
   height: auto;
-  
+}
   .button{
     background-color: #FFB726  ; /* Cor de fundo */
     color: rgb(22, 13, 13); /* Cor do texto */
@@ -107,7 +107,7 @@ ul li a:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
   }
-}
+
 
 .card {
   max-width: 300px;

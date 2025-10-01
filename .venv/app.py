@@ -37,5 +37,21 @@ def conf_cad_user():
 def cadastro_conteudo():
     return render_template('cadastro_conteudo.html')
 
+@app.route('/podcasts')
+def pag_podcast():
+    return render_template('podcast.html')
+
+@app.route('/livros')
+def pag_livros():
+    return render_template('livros.html')
+
+@app.route('/video')
+def pag_videos():
+    return render_template('video.html')
+
+@app.route('/artigo')
+def pag_artigos():
+    return render_template('artigo.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
