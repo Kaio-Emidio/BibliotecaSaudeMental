@@ -32,6 +32,11 @@ header {
   margin-left: 15px;
 }
 
+.pag_name{
+  justify-content: flex-start;
+
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -82,25 +87,23 @@ ul li a:hover {
   align-self: center;
   height: auto;
   
-  .button1 {
+  .button{
     background-color: #FFB726  ; /* Cor de fundo */
     color: rgb(22, 13, 13); /* Cor do texto */
     padding: 5px 1px;
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
     border-radius: 5px; /* Bordas arredondadas */
   }
-  .caixa_botao{
-    display: flex;
-    justify-content: center;
-  }
-  .veja_mais{
+
+
+  .conheça_button{
     border: 1px solid #FFB726 ;
     border-radius: 20px;
     background-color:#fae795;
     color: #030107;
     text-decoration: none;
   }
-  .veja_mais:hover{
+  .conheça_button:hover{
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
   }
