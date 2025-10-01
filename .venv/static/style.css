@@ -21,6 +21,7 @@ header {
     padding-left: 20px;
 }
 
+
 .logo {
   width: 50px;
   height: 50px;
@@ -33,8 +34,8 @@ header {
 }
 
 .pag_name{
-  justify-content: flex-start;
-
+  margin: 7vh;
+  color: #3f4264;
 }
 
 ul {
@@ -56,6 +57,7 @@ ul li a {
 
 ul li a:hover {
   background-color: #c0ba74;
+  height: 50px;
 }
 
 
@@ -74,7 +76,7 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   align-self: center;
-  color: #030107;
+  color: hsl(240, 100%, 94%);
 }
 
 .text-sobre{
@@ -86,7 +88,7 @@ ul li a:hover {
   flex-direction: column;
   align-self: center;
   height: auto;
-  
+}
   .button{
     background-color: #FFB726  ; /* Cor de fundo */
     color: rgb(22, 13, 13); /* Cor do texto */
@@ -107,7 +109,7 @@ ul li a:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
   }
-}
+
 
 .card {
   max-width: 300px;
