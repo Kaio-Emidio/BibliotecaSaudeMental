@@ -97,18 +97,10 @@ ul li a:hover {
   border-radius: 5px;
 }
 
-
-.conheça_button {
-  border: 1px solid #FFB726;
-  border-radius: 20px;
-  background-color: #fae795;
-  color: #030107;
-  text-decoration: none;
-}
-
-.conheça_button:hover {
+.button:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(168, 144, 6, 0.897)15;
+  transition: 3ms;
 }
 
 
@@ -139,16 +131,4 @@ ul li a:hover {
   justify-content: flex-start;
   max-width: 100%;
   flex-direction: row;
-}
-
-.button1 {
-  background-color: #FFB726;
-  /* Cor de fundo */
-  color: rgb(22, 13, 13);
-  /* Cor do texto */
-  padding: 5px 1px;
-  cursor: pointer;
-  /* Muda o cursor para indicar que é clicável */
-  border-radius: 5px;
-  /* Bordas arredondadas */
 }
