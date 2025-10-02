@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="static\login_usuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
+        <div class="header-container">
+            <nav class="navegador"></nav>
+            <ul>
+                <li><a href="/"><i><i class="fa-solid fa-house-chimney"></i> </i>Home</a></li>
+                <li><a href="#"><i class="fa-solid fa-address-book"></i> Contato</a></li>
+                <li><a href="#"><i class="fa-solid fa-brain"></i> Sobre</a></li>
+                <li><a href="cadastro_conteudo.html"><i class="fa-solid fa-right-to-bracket"></i> Entrar</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="caixa_form">
+        <form action="/login-concluido" method="post">
+            <div>
+                <h1>Entrar</h1>
+            </div>
+            <div class="inputs">
+                <input type="text" name="nome" id="nome" placeholder="Usuário" required autofocus>
+            </div>
+            <div class="inputs">
+                <input type="password" name="cidade" id="cidade" placeholder="Senha" required>
+            </div>
+            <div>
+                <input class="submit" type="submit" value="Entrar">
+            </div>
+            <div>
+                <input class="cadastro" type="button" value="Ou cadastre-se"
+                    onclick="window.location.pathname='/cadastro-usuario';">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
