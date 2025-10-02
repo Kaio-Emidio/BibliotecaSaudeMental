@@ -33,6 +33,11 @@ header {
     margin-left: 15px;
 }
 
+.pag_name {
+    margin: 7vh;
+    color: #3f4264;
+  }
+  
 ul {
     list-style-type: none;
     margin: 0;

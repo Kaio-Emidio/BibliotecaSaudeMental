@@ -70,7 +70,7 @@ ul li a:hover {
   height: 100vh;
 }
 
-.sobre, .acess-conteudos, .pod-title, .livros-title, .videos-title {
+#sobre, #acess-conteudos, #pod-title, #livros-title, #videos-title {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -91,14 +91,10 @@ ul li a:hover {
 
 .button {
   background-color: #FFB726;
-  /* Cor de fundo */
-  color: rgb(22, 13, 13);
-  /* Cor do texto */
+  color: rgb(45, 5, 53);
   padding: 5px 1px;
   cursor: pointer;
-  /* Muda o cursor para indicar que é clicável */
   border-radius: 5px;
-  /* Bordas arredondadas */
 }
 
 
