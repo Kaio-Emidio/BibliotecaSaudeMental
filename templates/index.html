@@ -54,63 +54,57 @@
 
         <div class="container">
 
-            <div class="card_teste">
-                <div class="card_img_teste">
-                    <img src="{{ url_for('static', filename='assets/img/é_noia_mina_img.jfif') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+            <div class="card">
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename='assets/img/é_noia_minha_img.jfif') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
                 </div>
-                <div class="card_titulo_teste">
+                <div class="card_titulo">
                     <h3>É nóia minha?</h3>
                 </div>
-                <div class="card_texto_teste">
+                <div class="card_texto">
                     <p>No Podcast “É nóia minha?” a roteirista, escritora e paranoica de plantão Camila
                         Fremder divide com seus convidados - que muitas vezes acabam sendo tão noiados quanto ela - todas as
                         maluquices que passam pela sua cabeça.</p>
                 </div>
-                <div class="card_botao_teste">
+                <div class="card_botao">
                     <input type="button" value="Conheça!" onclick="window.open('https://open.spotify.com/show/3abnr07SkMuHOUOXQpGnf1?si=a3383b160ca04cc5', '_blank')">
                 </div>
             </div>
 
-            <div class="card_teste">
-                <div class="card_img_teste">
+            <div class="card">
+                <div class="card_img">
                     <img src="{{ url_for('static', filename='assets/img/cardpod.jpg') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
                 </div>
-                <div class="card_titulo_teste">
-                    <h3>Título mto foda</h3>
+                <div class="card_titulo">
+                    <h3>Saúde Mental em Evidência</h3>
                 </div>
-                <div class="card_texto_teste">
-                    <p>Texto texte mto foda tbm</p>
+                <div class="card_texto">
+                    <p>Falamos sobre saúde mental no cotidiano, de maneira simples, desmistificando pseudociências e debatendo com outros profissionais da área da saúde. Alguns assuntos não deveriam ser sobre achismos. Aqui você vai ouvir conversas simples, atuais e científicas sobre saúde mental.</p>
                 </div>
-                <div class="card_botao_teste">
-                    <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('https://open.spotify.com/show/1VREgmRWFJHMuAKobz4PG7?si=79ef98efc248453f', '_blank')">
                 </div>
             </div>
 
             <div class="card">
-                <img src="{{ url_for('static', filename='assets/img/cardpod.jpg') }}" alt="" style="width:100%">
-                <h4> Saúde Mental em Evidência</h4>
-                <p>Falamos sobre saúde mental no cotidiano, de maneira simples, desmistificando
-                    pseudociências e debatendo com outros profissionais da área da saúde. Alguns assuntos não deveriam
-                    ser
-                    sobre achismos. Aqui você vai ouvir conversas simples, atuais e científicas sobre saúde mental.</p>
-                <a href="https://open.spotify.com/show/1VREgmRWFJHMuAKobz4PG7?si=79ef98efc248453f"
-                    class="button">Conheça!</a>
-            </div>
-
-            <div class="card">
-                <img src="{{ url_for('static', filename='assets/img/sac_de_saude_mental_img.jfif') }}" alt=""
-                    style="width:100%">
-                <h4> SAC de Saúde Mental</h4>
-                <p>Saúde mental parece ser um bicho de sete cabeças, mas, na verdade, é um elemento
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename='assets/img/sac_de_saude_mental_img.jfif') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+                </div>
+                <div class="card_titulo">
+                    <h3>SAC de Saúde Mental</h3>
+                </div>
+                <div class="card_texto">
+                    <p>Saúde mental parece ser um bicho de sete cabeças, mas, na verdade, é um elemento
                     importante para nossa saúde. Aqui no SAC de Saúde Mental, as psicólogas Lizandra Brandani e Bianca
                     Dalmaso falam, com bom humor, dos temas de saúde mental que você sempre quis saber, mas não tinha
                     pra
                     quem perguntar.
                     Imagina que a Saúde Mental é uma empresa que, agora, tem um SAC para você interagir com ela à
-                    vontade!
-                </p>
-                <a href="https://open.spotify.com/show/0vwz6tHHYFN3Me2cRPMBR8?si=4fb43650088d401f"
-                    class="button">Conheça!</a>
+                    vontade!</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('https://open.spotify.com/show/0vwz6tHHYFN3Me2cRPMBR8?si=4fb43650088d401f', '_blank')">
+                </div>
             </div>
         </div>
     </section>
@@ -121,32 +115,49 @@
         <h2 id="livros-title">Livros</h2>
 
         <div class="container">
+
             <div class="card">
-                <img src="{{ url_for('static', filename='assets/img/card.jpg') }}" alt="" style="width:100%">
-                <h4> O demônio do meio-dia</h4>
-                <p>Entremeando o relato de sua própria batalha contra a doença com o depoimento de
-                    vítimas da depressão e a opinião de especialistas, Solomon desconstrói mitos, explora questões
-                    éticas e
-                    morais, descreve as medicações disponíveis, a eficácia de tratamentos alternativos e o impacto que a
-                    depressão tem nas várias populações demográficas (sejam crianças, homossexuais ou os habitantes da
-                    Groenlândia).</p>
-                <a class="button" href="">Conheça!</a>
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename='assets/img/card.jpg') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+                </div>
+                <div class="card_titulo">
+                    <h3>O demônio do meio-dia</h3>
+                </div>
+                <div class="card_texto">
+                    <p>Entremeando o relato de sua própria batalha contra a doença com o depoimento de
+                        vítimas da depressão e a opinião de especialistas, Solomon desconstrói mitos, explora questões
+                        éticas e
+                        morais, descreve as medicações disponíveis, a eficácia de tratamentos alternativos e o impacto que a
+                        depressão tem nas várias populações demográficas (sejam crianças, homossexuais ou os habitantes da
+                        Groenlândia).</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
+                </div>
             </div>
 
             <div class="card">
-                <img src="{{ url_for('static', filename='assets/img/A-Geracao-Ansiosa.webp') }}" alt=""
-                    style="width:100%">
-                <h4> A Geração Ansiosa</h4>
-                <p>O autor demonstra como a "infância baseada no brincar" entrou em declínio na década de
-                    1980 e foi substituída pela "infância baseada no celular", acompanhada por uma hiperconectividade
-                    que
-                    alterou o desenvolvimento social e neurológico dos jovens e tem causado privação de sono,
-                    privação social, fragmentação da atenção e vício. Ele também examina por que as redes sociais
-                    prejudicam
-                    mais as meninas e os motivos que levam os meninos a migrar do mundo real para o virtual, com
-                    consequências desastrosas para eles e as pessoas a seu redor.</p>
-                <a class="button" href="">Conheça!</a>
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename='assets/img/A-Geracao-Ansiosa.jpg') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+                </div>
+                <div class="card_titulo">
+                    <h3>A Geração Ansiosa</h3>
+                </div>
+                <div class="card_texto">
+                    <p>O autor demonstra como a "infância baseada no brincar" entrou em declínio na década de
+                        1980 e foi substituída pela "infância baseada no celular", acompanhada por uma hiperconectividade
+                        que
+                        alterou o desenvolvimento social e neurológico dos jovens e tem causado privação de sono,
+                        privação social, fragmentação da atenção e vício. Ele também examina por que as redes sociais
+                        prejudicam
+                        mais as meninas e os motivos que levam os meninos a migrar do mundo real para o virtual, com
+                        consequências desastrosas para eles e as pessoas a seu redor.</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -158,44 +169,62 @@
         <h2 id="videos-title">Videos</h2>
 
         <div class="container">
+
             <div class="card">
-                <img src="{{ url_for('static', filename='assets/img/card.jpg') }}" alt="" style="width:100%">
-                <h4> O demônio do meio-dia</h4>
-                <p>Entremeando o relato de sua própria batalha contra a doença com o depoimento de
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename='assets/img/card.jpg') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+                </div>
+                <div class="card_titulo">
+                    <h3>O demônio do meio-dia</h3>
+                </div>
+                <div class="card_texto">
+                    <p>Entremeando o relato de sua própria batalha contra a doença com o depoimento de
                     vítimas da depressão e a opinião de especialistas, Solomon desconstrói mitos, explora questões
                     éticas e
                     morais, descreve as medicações disponíveis, a eficácia de tratamentos alternativos e o impacto que a
                     depressão tem nas várias populações demográficas (sejam crianças, homossexuais ou os habitantes da
                     Groenlândia).</p>
-                <a class="button" href="">Conheça!</a>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
+                </div>
             </div>
 
             <div class="card">
-                <img src="{{ url_for('static', filename='assets/img/cardpod.jpg') }}" alt="" style="width:100%">
-                <h4> Saúde Mental em Evidência</h4>
-                <p>Falamos sobre saúde mental no cotidiano, de maneira simples, desmistificando
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename='assets/img/cardpod.jpg') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+                </div>
+                <div class="card_titulo">
+                    <h3>Saúde Mental em Evidência</h3>
+                </div>
+                <div class="card_texto">
+                    <p>Falamos sobre saúde mental no cotidiano, de maneira simples, desmistificando
                     pseudociências e debatendo com outros profissionais da área da saúde. Alguns assuntos não deveriam
                     ser
                     sobre achismos. Aqui você vai ouvir conversas simples, atuais e científicas sobre saúde mental.</p>
-                <a class="button" href="">Conheça!</a>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
+                </div>
             </div>
+
         </div>
     </section>
 
     <h2 id="pod-title">Testezinho</h2>
 
     <div class="container">
-        <div class="card_teste">
-            <div class="card_img_teste">
+        <div class="card">
+            <div class="card_img">
                 <img src="{{ url_for('static', filename='assets/img/') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
             </div>
-            <div class="card_titulo_teste">
+            <div class="card_titulo">
                 <h3>Título mto foda</h3>
             </div>
-            <div class="card_texto_teste">
+            <div class="card_texto">
                 <p>Texto texte mto foda tbm</p>
             </div>
-            <div class="card_botao_teste">
+            <div class="card_botao">
                 <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
             </div>
         </div>
