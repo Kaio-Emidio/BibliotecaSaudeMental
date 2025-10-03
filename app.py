@@ -43,6 +43,10 @@ def conf_cad_user():
 
     return render_template('login_usuario.html')
 
+@app.route('/favoritos')
+def favoritos():
+    return render_template('favoritos.html')
+
 @app.route('/cadastro-de-conteudo')
 def cadastro_conteudo():
     return render_template('cadastro_conteudo.html')
