@@ -181,6 +181,22 @@ h2 {
   box-shadow: 0 8px 25px rgba(168, 144, 6, 0.897)15;
 }
 
-.container * {
-  /* border: solid 1px red; */
+/*.container {* /
+  /* border: solid 1px red; }*/
+
+.botao_cont{
+  background-color: #FFB726;
+  color: rgb(45, 5, 53);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  justify-self: center;
+  transition: 0.3s;
+}
+
+.botao_cont:hover{
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(168, 144, 6, 0.897)15;
 }

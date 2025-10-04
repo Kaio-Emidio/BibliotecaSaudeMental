@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Conteúdo</title>
-    <link rel="stylesheet" href="estilo_conteudo.css">
+    <link rel="stylesheet" href="static\cadastro_conteudo.css">
 </head>
 
 <body>
@@ -17,6 +17,9 @@
             <label for="descricao">Sinopse:</label><br>
             <input type="text" name="descricao" id="desc" placeholder="Escreva sobre o que se trata"><br>
 
+            <label for="autor">Autor:</label><br>
+            <input type="text" name="Autor" id="autor" placeholder="Digite o nome do autor"> <br>
+
             <label for="Url">Digite o link:</label><br>
             <input type="url" name="Caminho_para_conteudo" id="link" placeholder="Digite o link do conteúdo"> <br>
 
@@ -24,9 +27,10 @@
             <input type="url" name="Link_para_capa" id="Link da capa" placeholder="Coloque o caminho da capa"> <br>
 
             <label for="publicacao">Data de Publicação:</label><br>
-            <input type="text" name="Data_de_publicação" id="Data" placeholder="Digite o ano de Publicação"> <br>
+            <input type="text" name="Data_de_publicacao" id="Data" placeholder="Digite o ano de Publicação"> <br>
 
             <label for="Tipo_de_conteúdo">Tipo de conteúdo:</label><br>
+
             <input type="radio" id="Video" name="tipo_conteudo" value="Video">
             <label for="Video">Vídeo</label><br>
 
@@ -39,6 +43,7 @@
             <input type="radio" name="tipo_conteudo" id="Artigo" value="Artigo">
             <label for="Artigo">Artigo</label><br>
 
+            <button type="submit">Cadastrar</button>
         </form>
     </div>
 </body>
