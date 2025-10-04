@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+    <link rel="stylesheet" href="static\inicio.css">
+</head>
+<body>
+    <div id="grad">
+        <div class="img">
+            <img src="{{ url_for('static', filename='assets/img/hero.jpg') }}" alt="">
+        </div>
+        <div class="botoes">
+            <input type="button" value="Entrar" onclick="window.location.href='/login-usuario'">
+            <input type="button" value="Cadastrar" onclick="window.location.href='/cadastro-usuario'">
+        </div>
+    </div>
+</body>
+</html>

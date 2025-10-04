@@ -5,7 +5,11 @@ app = Flask(__name__)
 
 # Rota principal
 @app.route('/')
-def index():
+def inicio():
+    return render_template('inicio.html')
+
+@app.route('/biblioteca')
+def biblioteca():
     return render_template('index.html')
 
 @app.route('/login-usuario')
@@ -43,7 +47,7 @@ def conf_cad_user():
 
     return render_template('login_usuario.html')
 
-@app.route('/cadastrar_conteudo', methods=['GET', 'POST'])
+@app.route('/cadastrar-conteudo', methods=['GET', 'POST'])
 def conf_cad_cont():
     if request.method == 'POST':
         nome = request.form.get('Nome_do_conteudo')
