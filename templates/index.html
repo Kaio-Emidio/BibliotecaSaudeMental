@@ -15,6 +15,14 @@
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
             <h1 class="pag_name">Biblioteca Mental - Bem Vindo(a), {{ nome }}</h1>
         </div>
+
+        <form action="/search" method="get">
+            <input type="search" id="search-bar" name="q" placeholder="Busca">
+            <button type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i> 
+            </button>
+        </form>
+        
         <nav>
             <ul>
                 <li><a href="{{ url_for('inicio') }}"><i><i class="fa-solid fa-house-chimney"></i></i> Início</a></li>

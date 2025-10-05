@@ -39,6 +39,11 @@ header div {
   margin-left: 10px;
 }
 
+.fa-search {
+  color: #084068;
+  font-size: 15px; 
+}
+
 ul {
   list-style-type: none;
   display: flex;
