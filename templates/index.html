@@ -13,15 +13,14 @@
     <header>
         <div>
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
-            <h1 class="pag_name">Biblioteca Mental</h1>
+            <h1 class="pag_name">Biblioteca Mental - Usuário: {{ id_user }}</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#"><i><i class="fa-solid fa-house-chimney"></i> </i>Home</a></li>
-                <li><a href="#"><i class="fa-solid fa-address-book"></i> Contato</a></li>
+                <li><a href="{{ url_for('inicio') }}"><i><i class="fa-solid fa-house-chimney"></i></i> Início</a></li>
                 <li><a href="#sobre"><i class="fa-solid fa-brain"></i> Sobre</a></li>
-                <li><a href="/favoritos"><i class="fa-solid fa-heart"></i>Favoritos</a></li>
-                <!-- <li><a href="/login-usuario"><i class="fa-solid fa-right-to-bracket"></i> Entrar</a></li> -->
+                <li><a href="{{ url_for('favoritos') }}"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
             </ul>
         </nav>
     </header>

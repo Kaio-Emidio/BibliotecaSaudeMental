@@ -178,7 +178,6 @@ h2 {
 
 .botao_cont{
   background-color: #FFB726;
-  color: rgb(45, 5, 53);
   padding: 20px;
   cursor: pointer;
   border-radius: 100%;
@@ -189,6 +188,10 @@ h2 {
   bottom: 25px;
   right: 25px;
   z-index: 1;
+}
+
+.botao_cont i {
+  color: #1E1E1E;
 }
 
 .botao_cont:hover{

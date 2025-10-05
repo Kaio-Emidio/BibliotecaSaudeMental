@@ -1,25 +1,42 @@
-from flask import Flask, render_template, request
-from utils import ConectarBD, InserirAlterarRemover
+from flask import Flask, render_template, request, redirect, url_for, flash, session
+from utils import ConectarBD, InserirAlterarRemover, login
 
 app = Flask(__name__)
+app.secret_key = 'segredo'
 
 # Rota principal
 @app.route('/')
+def index():
+    return redirect(url_for('biblioteca'))
+
+@app.route('/inicio')
 def inicio():
     return render_template('inicio.html')
 
 @app.route('/biblioteca')
 def biblioteca():
-    return render_template('index.html')
+    if 'id' not in session:
+        flash('Você precisa fazer login primeiro.', 'error')
+        return redirect(url_for('inicio'))
+    id_user = session['id']
+    return render_template('index.html', id_user=id_user)
 
-@app.route('/login-usuario')
+@app.route('/login-usuario', methods=['GET','POST'])
 def login_usuario():
-    return render_template('login_usuario.html')
+    if request.method == 'POST':
+        usuario = request.form['usuario']
+        senha = request.form['senha']
 
-@app.route('/login-concluido', methods=['POST'])
-def conf_login():
-    # Adicionar a verificação de usuário
-    return render_template('index.html')
+        resultado = login(usuario, senha)
+
+        if resultado:
+            session['id'] = resultado['id_usuario']
+            flash('login feito com sucesso!', 'success')
+            return redirect(url_for('biblioteca'))
+        else:
+            flash('Usuário ou senha incorretos.', 'error')
+            return redirect(url_for('login_usuario'))
+    return render_template('login_usuario.html')
 
 @app.route('/cadastro-usuario')
 def cadastro_usuario():
@@ -45,7 +62,13 @@ def conf_cad_user():
 
     InserirAlterarRemover(sql, dados)
 
-    return render_template('login_usuario.html')
+    return redirect(url_for('login_usuario'))
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('Você saiu da conta.', 'info')
+    return redirect(url_for('login_usuario'))
 
 @app.route('/cadastrar-conteudo', methods=['GET', 'POST'])
 def conf_cad_cont():
