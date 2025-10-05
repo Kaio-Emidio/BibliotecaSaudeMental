@@ -36,3 +36,16 @@ def login(usuario, senha):
     cnx.close()
 
     return resultado
+
+def get_info(id):
+    cnx = ConectarBD()
+
+    cursor = cnx.cursor(dictionary=True)
+
+    cursor.execute('select * from usuario where id_usuario = %s', (id))
+
+    resultado = cursor.fetchone()
+
+    cnx.close()
+
+    return resultado

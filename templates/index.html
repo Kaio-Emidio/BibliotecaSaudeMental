@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Mental</title>
+    <title>Biblioteca Mental - {{ id }}</title>
     <link rel="stylesheet" href="static\style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
     <header>
         <div>
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
-            <h1 class="pag_name">Biblioteca Mental - Usuário: {{ id_user }}</h1>
+            <h1 class="pag_name">Biblioteca Mental - Bem Vindo(a), {{ nome }}</h1>
         </div>
         <nav>
             <ul>

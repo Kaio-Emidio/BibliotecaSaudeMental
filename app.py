@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-from utils import ConectarBD, InserirAlterarRemover, login
+from utils import ConectarBD, InserirAlterarRemover, login, get_info
 
 app = Flask(__name__)
 app.secret_key = 'segredo'
@@ -19,7 +19,10 @@ def biblioteca():
         flash('Você precisa fazer login primeiro.', 'error')
         return redirect(url_for('inicio'))
     id_user = session['id']
-    return render_template('index.html', id_user=id_user)
+    nome_user = session['nome']
+
+
+    return render_template('index.html', id=id_user, nome=nome_user)
 
 @app.route('/login-usuario', methods=['GET','POST'])
 def login_usuario():
@@ -30,7 +33,11 @@ def login_usuario():
         resultado = login(usuario, senha)
 
         if resultado:
-            session['id'] = resultado['id_usuario']
+            infos_user = get_info((resultado['id_usuario'],))
+
+            session['id'] = infos_user['ID_Usuario']
+            session['nome'] = infos_user['Nome']
+            
             flash('login feito com sucesso!', 'success')
             return redirect(url_for('biblioteca'))
         else:
@@ -38,31 +45,29 @@ def login_usuario():
             return redirect(url_for('login_usuario'))
     return render_template('login_usuario.html')
 
-@app.route('/cadastro-usuario')
+@app.route('/cadastro-usuario', methods=['GET','POST'])
 def cadastro_usuario():
+    if request.method == 'POST':
+        nome = request.form['nome_user']
+        usuario = request.form['Usuario']
+        senha = request.form['Senha']
+        email = request.form['Email_do_User']
+        telefone = request.form['Número_telefone']
+
+        if email == '':
+            email = None
+        if telefone == '':
+            telefone = None
+        
+        sql = 'INSERT INTO usuario (Nome, Usuario, Senha, Email, Telefone) \
+            VALUES (%s, %s, %s, %s, %s)'
+        
+        dados = (nome, usuario, senha, email, telefone)
+
+        InserirAlterarRemover(sql, dados)
+
+        return redirect(url_for('login_usuario'))
     return render_template('cadastro_usuario.html')
-
-@app.route('/cadastro-de-usuario-concluido', methods=['POST'])
-def conf_cad_user():
-    nome = request.form.get('nome_user')
-    usuario = request.form.get('Usuario')
-    senha = request.form.get('Senha')
-    email = request.form.get('Email_do_User')
-    telefone = request.form.get('Número_telefone')
-
-    if email == '':
-        email = None
-    if telefone == '':
-        telefone = None
-
-    sql = 'INSERT INTO usuario (Nome, Usuario, Senha, Email, Telefone) \
-        VALUES (%s, %s, %s, %s, %s)'
-    
-    dados = (nome, usuario, senha, email, telefone)
-
-    InserirAlterarRemover(sql, dados)
-
-    return redirect(url_for('login_usuario'))
 
 @app.route('/logout')
 def logout():
