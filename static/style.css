@@ -58,7 +58,7 @@ ul li a:hover {
 
 
 .hero {
-  background: url("assets/img/hero_img.jpg") no-repeat center center/cover;
+  background: url("assets/img/hero_img.png") no-repeat center center/cover;
   display: flex;
   align-content: center;
   background-repeat: no-repeat;
