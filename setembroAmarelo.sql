@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `setembroamarelo` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `setembroamarelo`;
--- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: setembroamarelo
+-- Host: localhost    Database: setembroamarelo
 -- ------------------------------------------------------
--- Server version	8.0.43
+-- Server version	8.0.36
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,7 +30,7 @@ CREATE TABLE `categoria` (
   `Descricao` text,
   PRIMARY KEY (`ID_Categoria`),
   UNIQUE KEY `Nome` (`Nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `categoria` (
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
+INSERT INTO `categoria` VALUES (3,'Artigo','Textos que analisam a obra de um autor, um gênero, um movimento literário ou um tema específico em obras literárias.');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +121,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`ID_Usuario`),
   UNIQUE KEY `Usuario` (`Usuario`),
   UNIQUE KEY `Email_UNIQUE` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,6 +130,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (3,'Kaio','wolyo','kaio123','kaio@gmail.com','(84) 99865-9580','2025-10-06 14:58:44'),(4,'Eduarda','Eduarda','eduarda123','eduarda@gmail.com','(44) 44444-4444','2025-10-06 16:07:44'),(5,'Emanuelle','manu','manu123','manuzinha@gmail.com','(55) 55555-5555','2025-10-06 16:08:24'),(6,'Ana','Candy','aejd','anaeloisa@gmail.com','(66) 66666-6666','2025-10-06 16:11:28'),(7,'Vitória','vitória','vivi123','vitoria@gmail.com','(77) 77777-7777','2025-10-06 16:12:39'),(8,'Vinícius','Vini','viniboy','vinicius@gmail.com','(88) 88888-8888','2025-10-06 16:13:29');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -141,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-01 19:54:07
+-- Dump completed on 2025-10-06 16:28:39
