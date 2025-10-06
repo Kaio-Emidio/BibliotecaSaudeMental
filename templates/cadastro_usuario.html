@@ -11,20 +11,19 @@
 
 <body>
     <header>
-        <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
-        <div class="header-container">
+        <div>
+            <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
             <h1 class="pag_name">Biblioteca Mental</h1>
-            <nav class="navegador"></nav>
-            <ul>
-                <li><a href="/"><i><i class="fa-solid fa-house-chimney"></i> </i>Home</a></li>
-                <li><a href="#"><i class="fa-solid fa-address-book"></i> Contato</a></li>
-                <li><a href="login_usuario.html"><i class="fa-solid fa-right-to-bracket"></i> Entrar</a></li>
-            </ul>
         </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}"><i><i class="fa-solid fa-house-chimney"></i></i> Início</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
-        <form action="/cadastro-de-usuario-concluido" method="post">
+        <form method="POST">
             <div>
                 <h1>Cadastro</h1>
             </div>
