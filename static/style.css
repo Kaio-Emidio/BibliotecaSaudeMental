@@ -71,7 +71,7 @@ ul li a:hover {
   height: 100vh;
 }
 
-#sobre, #acess-conteudos, #pod-title, #livros-title, #videos-title , #artigos-title {
+#sobre, #acess-conteudos, #pod-title, #livros-title, #videos-title , #artigos-title , #categorias-title{
   text-align: center;
   display: flex;
   flex-direction: column;
