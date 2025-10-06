@@ -200,8 +200,6 @@ h2 {
   box-shadow: 0 8px 25px rgba(168, 144, 6, 0.897)15;
 }
 
-/*.container {* /
-  /* border: solid 1px red; }*/
 
 .botao_cont{
   background-color: #FFB726;
@@ -258,10 +256,6 @@ h2 {
   text-transform: uppercase;
 }
 
-  .links-column li {
-      margin: 0 10px;
-  }
-
-  .links-column a {
-      display: inline-block;
-  }
+footer ul {
+  margin-top: 20px;
+}

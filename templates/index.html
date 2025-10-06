@@ -62,7 +62,7 @@
             mente é essencial para viver com equilíbrio e bem-estar.</p>
     </section>
     
-    <section>
+    <section id="catego">
     <h1 id="categorias-title">Categorias</h1>
     <div class="container">
         <div class="card">
@@ -119,12 +119,12 @@
 
 
     <div class="botao_cont">
-        <a href="/cadastrar_conteudo"><i class="fa-solid fa-plus"></i></a>
+        <a href="/cadastrar-conteudo"><i class="fa-solid fa-plus"></i></a>
     </div>
     
     <h1 id="acess-conteudos"> Acesse nossos conteúdos</h1>
 
-    <section>
+    <section id="podca">
         <h2 id="pod-title">Podcasts</h2>
 
         <div class="container">
@@ -186,7 +186,7 @@
 
     <!-- Alterar para livros -->
 
-    <section>
+    <section id="livro">
         <h2 id="livros-title">Livros</h2>
 
         <div class="container">
@@ -241,7 +241,7 @@
 
     <!-- Alterar para videos -->
 
-    <section>
+    <section id="video">
         <h2 id="videos-title">Videos</h2>
 
         <div class="container">
@@ -287,43 +287,45 @@
         </div>
     </section>
 
-    <h2 id="artigos-title">Artigos</h2>
+    <section id="artigo">
+        <h2 id="artigos-title">Artigos</h2>
 
-    <div class="container">
-        <div class="card">
-            <div class="card_img">
-                <img src="{{ url_for('static', filename='assets/img/') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+        <div class="container">
+         <div class="card">
+               <div class="card_img">
+                   <img src="{{ url_for('static', filename='assets/img/') }}" onerror="this.onerror=null; this.src='{{ url_for('static', filename='assets/img/no_image.jpg') }}';">
+               </div>
+              <div class="card_titulo">
+                   <h3>Título mto maneiro</h3>
+              </div>
+                <div class="card_texto">
+                    <p>Texto texte mto maneiro tbm</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
+                </div>
             </div>
-            <div class="card_titulo">
-                <h3>Título mto foda</h3>
-            </div>
-            <div class="card_texto">
-                <p>Texto texte mto foda tbm</p>
-            </div>
-            <div class="card_botao">
-                <input type="button" value="Conheça!" onclick="window.open('URL', '_blank')">
-            </div>
+
         </div>
-
-    </div>
-
+    </section>
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-column info-column">
                 <h3>Biblioteca mental</h3>
-                <p style="font-size: 15px;">Em busca do conhecimento de nossa própria mente</p>
+                <p style="font-size: 15px;">Em busca do conhecimento de nossa própria mente.</p>
         
             </div>
     
-            <div class="footer-column links-column">
+            <div>
                 <h4>Mapa do site</h4>
                 <ul>
-                    <li><a href="#heroo">Inicio</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#videos">Vídeos</a></li>
-                    <li><a href="#categorias">Categorias</a></li>
-                    <li><a href="#podcast">Livros</a></li>
-                    <li><a href="#artigos">Artigos</a></li>
+                    <li><a href="#heroo">Inicio</a></li> 
+                    <li><a href="#sobre">Sobre</a></li> 
+                    <li><a href="#catego">Categorias</a></li> 
+                    <li><a href="#podca">Podcasts</a></li> 
+                    <li><a href="#livro">Livros</a></li>
+                    <li><a href="#video">Vídeos</a></li> 
+                    <li><a href="#artigo">Artigos</a></li>
             
                 </ul>
             </div>
