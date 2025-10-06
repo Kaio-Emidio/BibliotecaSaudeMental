@@ -194,7 +194,6 @@ h2 {
   padding: 20px;
   cursor: pointer;
   border-radius: 100%;
-  border: none;
   transition: 0.3s;
   font-size: xx-large;
   position: fixed;
@@ -211,3 +210,44 @@ h2 {
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(168, 144, 6, 0.897)15;
 }
+
+
+.main-footer {
+  background-color: #FFB726;
+  color: #535680;
+  padding: 30px 0 10px 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 20px;
+  border-bottom: 1px solid #535680(255, 255, 255, 0.1); 
+}
+
+
+.footer-column {
+  padding: 20px;
+  margin: 10px;
+  min-width: 250px; 
+  flex-grow: 1; 
+}
+
+.footer-column h3, .footer-column h4 {
+  color: #535680; 
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+  .links-column li {
+      margin: 0 10px;
+  }
+
+  .links-column a {
+      display: inline-block;
+  }
