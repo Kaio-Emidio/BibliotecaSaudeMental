@@ -22,9 +22,23 @@ header {
   row-gap: 20px;
 }
 
+@media screen and (max-width: 1080px) {
+  header {
+    position: absolute;
+  }  
+}
+
 header div {
   display: flex;
   align-items: center;
+}
+
+.titulos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: auto;
+  /* border: solid 1px red; */
 }
 
 .logo {
