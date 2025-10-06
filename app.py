@@ -76,7 +76,7 @@ def logout():
     return redirect(url_for('login_usuario'))
 
 @app.route('/cadastrar_conteudo', methods=['GET', 'POST'])
-def conf_cad_cont():
+def cadastro_conteudo():
     if request.method == 'POST':
         titulo = request.form.get('Nome_do_conteudo')
         sinopse = request.form.get('descricao')
@@ -103,10 +103,6 @@ def conf_cad_cont():
 @app.route('/favoritos')
 def favoritos():
     return render_template('favoritos.html')
-
-@app.route('/cadastro-de-conteudo')
-def cadastro_conteudo():
-    return render_template('cadastro_conteudo.html')
 
 @app.route('/podcasts')
 def pag_podcast():

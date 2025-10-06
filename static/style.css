@@ -24,7 +24,7 @@ header {
 
 @media screen and (max-width: 1080px) {
   header {
-    position: absolute;
+    position: relative;
   }  
 }
 
@@ -36,7 +36,7 @@ header div {
 .titulos {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 60%;
   height: auto;
   /* border: solid 1px red; */
 }
