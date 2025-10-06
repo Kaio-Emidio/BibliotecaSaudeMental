@@ -2,6 +2,7 @@
   padding: 0px;
   margin: 0px;
   /* border: solid 1px red; */
+  /* font-family: 'Roboto', sans-serif; */
 }
 
 body {
@@ -259,4 +260,8 @@ h2 {
 
 footer ul {
   margin-top: 20px;
+}
+
+#podca, #heroo, #sobre, #livro, #artigo, #catego, #video {
+  scroll-margin-top: 100px;
 }
