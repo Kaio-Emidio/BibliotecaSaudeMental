@@ -30,7 +30,7 @@ CREATE TABLE `categoria` (
   `Descricao` text,
   PRIMARY KEY (`ID_Categoria`),
   UNIQUE KEY `Nome` (`Nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,6 @@ CREATE TABLE `categoria` (
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (3,'Artigo','Textos que analisam a obra de um autor, um gênero, um movimento literário ou um tema específico em obras literárias.');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +63,7 @@ CREATE TABLE `conteudo` (
   PRIMARY KEY (`ID_Conteudo`),
   KEY `ID_Categoria` (`ID_Categoria`),
   CONSTRAINT `conteudo_ibfk_1` FOREIGN KEY (`ID_Categoria`) REFERENCES `categoria` (`ID_Categoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +120,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`ID_Usuario`),
   UNIQUE KEY `Usuario` (`Usuario`),
   UNIQUE KEY `Email_UNIQUE` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +129,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (3,'Kaio','wolyo','kaio123','kaio@gmail.com','(84) 99865-9580','2025-10-06 14:58:44'),(4,'Eduarda','Eduarda','eduarda123','eduarda@gmail.com','(44) 44444-4444','2025-10-06 16:07:44'),(5,'Emanuelle','manu','manu123','manuzinha@gmail.com','(55) 55555-5555','2025-10-06 16:08:24'),(6,'Ana','Candy','aejd','anaeloisa@gmail.com','(66) 66666-6666','2025-10-06 16:11:28'),(7,'Vitória','vitória','vivi123','vitoria@gmail.com','(77) 77777-7777','2025-10-06 16:12:39'),(8,'Vinícius','Vini','viniboy','vinicius@gmail.com','(88) 88888-8888','2025-10-06 16:13:29');
+INSERT INTO `usuario` VALUES (0,'Kaio','wolyo','kaio123','kaio@gmail.com','(84) 99865-9580','2025-10-06 14:58:44'),(1,'Eduarda','Eduarda','eduarda123','eduarda@gmail.com','(44) 44444-4444','2025-10-06 16:07:44'),(2,'Emanuelle','manu','manu123','manuzinha@gmail.com','(55) 55555-5555','2025-10-06 16:08:24'),(3,'Ana','Candy','aejd','anaeloisa@gmail.com','(66) 66666-6666','2025-10-06 16:11:28'),(4,'Vitória','vitória','vivi123','vitoria@gmail.com','(77) 77777-7777','2025-10-06 16:12:39'),(5,'Vinícius','Vini','viniboy','vinicius@gmail.com','(88) 88888-8888','2025-10-06 16:13:29');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
