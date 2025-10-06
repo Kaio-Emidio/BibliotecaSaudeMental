@@ -75,24 +75,30 @@ def logout():
     flash('Você saiu da conta.', 'info')
     return redirect(url_for('login_usuario'))
 
-@app.route('/cadastrar-conteudo', methods=['GET', 'POST'])
+@app.route('/cadastrar_conteudo', methods=['GET', 'POST'])
 def conf_cad_cont():
     if request.method == 'POST':
-        nome = request.form.get('Nome_do_conteudo')
+        titulo = request.form.get('Nome_do_conteudo')
         sinopse = request.form.get('descricao')
         url = request.form.get('Caminho_para_conteudo')
-        capa = request.form.get('Link_para_capa') or None
+        capa = request.form.get('Link_para_capa') 
         autor = request.form.get('Autor')
-        data = request.form.get('Data_de_publicacao')
-        categoria = request.form.get('tipo_conteudo')
+        ano = request.form.get('Data_de_publicacao')
+        tipo = request.form.get('tipo_conteudo')
+        categoria_id = request.form.get('categoria')
 
-        sql = 'INSERT INTO conteudo (Nome, sinopse, url, capa, autor, data, categoria) VALUES (%s, %s, %s, %s, %s, %s, %s)'
-        dados = (nome, sinopse, url, capa, autor, data, categoria)
+        if capa == '':
+            capa = None
+
+        sql = 'INSERT INTO conteudo (Titulo, Sinopse, URL_Arquivo, Autor, Ano, Tipo, ID_Categoria, Capa) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)'
+        dados = (titulo, sinopse, url, autor, ano, tipo, categoria_id, capa)
+
         InserirAlterarRemover(sql, dados)
 
         return render_template('cadastro_conteudo.html', sucesso=True)
 
     return render_template('cadastro_conteudo.html')
+
 
 @app.route('/favoritos')
 def favoritos():

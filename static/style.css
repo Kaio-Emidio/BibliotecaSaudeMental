@@ -103,6 +103,14 @@ h2 {
   height: auto;
 }
 
+.text_infos {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 40px 0 10px 0;
+  text-align: left;
+  color: white;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
