@@ -12,7 +12,7 @@
 <body>
     <header>
        
-        <div>
+        <div class="cont_logo">
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
             <div class="titulos">
                 <h1 class="pag_name">Biblioteca Mental</h1>
@@ -21,20 +21,21 @@
 
         </div>
 
-
-
-        <nav>
-            <div class="search-container">
+        <div>
+            <div class="search_container">
                 <input type="text" id="search-input" class="search-input" placeholder="Pesquisar...">
-                <label for="search-input" class="search-button">🔍</label>  
+                <label for="search-input" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></label>  
             </div>
-            <ul>
-                <li><a href="#heroo"><i><i class="fa-solid fa-house-chimney"></i></i> Tela principal</a></li>
-                <li><a href="#sobre"><i class="fa-solid fa-brain"></i> Sobre</a></li>
-                <li><a href="{{ url_for('favoritos') }}"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
-                <li><a href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
-            </ul>
-        </nav>
+    
+            <nav>
+                <ul>
+                    <li><a href="#heroo"><i><i class="fa-solid fa-house-chimney"></i></i> Tela principal</a></li>
+                    <li><a href="#sobre"><i class="fa-solid fa-brain"></i> Sobre</a></li>
+                    <li><a href="{{ url_for('favoritos') }}"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+                    <li><a href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <section id="heroo">
     <div class="hero"></div>
