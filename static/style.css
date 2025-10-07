@@ -21,6 +21,7 @@ header {
   justify-content: space-between;
   padding: 10px;
   row-gap: 20px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1080px) {
@@ -89,9 +90,8 @@ ul li a:hover {
   margin: 50px;
 }
 
-#acess-conteudos {
-  font-size: 65px;
-  text-decoration:underline;
+#acess-conteudos{
+  text-decoration: underline;
 }
 
 #sobre h1 {
