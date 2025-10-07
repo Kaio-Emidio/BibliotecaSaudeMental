@@ -15,12 +15,12 @@
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
             <div class="titulos">
                 <h1 class="pag_name">Biblioteca Mental</h1>
-                <h3 style="margin: 10px;"> {{nome}}, aqui você pode cadastrar conteúdos!</h3>
+                <h3 class="hello"> {{nome}}, aqui você pode cadastrar conteúdos!</h3>
             </div>        
         </div>
         <nav>
             <ul>
-                <li><a href="{{ url_for('index') }}"><i><i class="fa-solid fa-house-chimney"></i></i> Início</a></li>
+                <li><a href="{{ url_for('index') }}"><i><i class="fa-solid fa-house-chimney"></i></i> Página principal</a></li>
             </ul>
         </nav>
     </header>
@@ -28,12 +28,12 @@
 
             <div>
                 <label for="titulo">Título:</label>
-                <input type="text" name="titulo" id="titulo" placeholder="Título do conteúdo" required>
+                <input type="text" name="titulo" id="titulo" placeholder="Título do seu conteúdo" required>
             </div>
 
             <div>
                 <label for="sinopse">Sinopse:</label>
-                <textarea name="sinopse" id="sinopse" placeholder="Escreva a sobre o que se trata"></textarea>
+                <textarea name="sinopse" id="sinopse" placeholder="Escreva sobre o que se trata"></textarea>
             </div>
 
             <div>

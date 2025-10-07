@@ -44,6 +44,11 @@ header div {
     margin-left: 10px;
 }
 
+.hello {
+    margin: 10px;
+    color: #3f4264;
+}
+
 .container{
     display: flex;
     align-items: center;

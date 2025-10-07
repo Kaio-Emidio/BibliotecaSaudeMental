@@ -72,6 +72,7 @@ ul li a {
 ul li a:hover {
   background-color: #c0ba74;
   height: 50px;
+  
 }
 
 
@@ -95,6 +96,7 @@ ul li a:hover {
 
 #acess-conteudos {
   font-size: 65px;
+  text-decoration:underline;
 }
 
 #sobre h1 {
@@ -208,6 +210,7 @@ h2 {
 .botao_cont{
   background-color: #FFB726;
   padding: 20px;
+  border: solid 1px #c58607; 
   cursor: pointer;
   border-radius: 100%;
   transition: 0.3s;
@@ -231,8 +234,8 @@ h2 {
 .main-footer {
   background-color: #FFB726;
   color: #535680;
-  padding: 30px 0 10px 0;
-  font-family: Arial, sans-serif;
+  padding: 30px 0 20px 0;
+  font-family: 'roboto'
 }
 
 
@@ -240,7 +243,7 @@ h2 {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-around; 
-  max-width: 1200px; 
+  max-width: 1300px; 
   margin: 0 auto;
   padding: 0 20px;
   border-bottom: 1px solid #535680(255, 255, 255, 0.1); 
@@ -257,15 +260,47 @@ h2 {
 .footer-column h3, .footer-column h4 {
   color: #535680; 
   margin-bottom: 15px;
-  text-transform: uppercase;
+  text-transform:none;
+  height: 15px;
 }
 
 footer ul {
   margin-top: 20px;
+  text-decoration:underline;
 }
 
 #podca, #heroo, #sobre, #livro, #artigo, #catego, #video {
   scroll-margin-top: 100px;
+}
+
+.LINK {
+  height: 10px;
+}
+
+.LINK li a {
+  text-decoration: none; 
+  color: #084068; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+
+.LINK li a:hover {
+  background-color: #535680; 
+  color: #fae795; 
+  cursor: pointer; 
+  font-size: 15;
+  border-radius: 3px;
+}
+
+.frase-footer {
+  font-size: 18px;
+  margin-bottom: 0px;
+  max-width: 1200px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  color: #084068;
 }
 
 .search-container {
@@ -276,7 +311,8 @@ footer ul {
 .search-input {
     width: 0;
     padding: 5px 10px;
-    border: 2px solid #000000;
+    border: 2px solid #084068;
+    background-color: #FFB726;
     border-radius: 25px;
     transition: width 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
     opacity: 0;
@@ -295,3 +331,4 @@ footer ul {
     top: 0;
     z-index: 1;
 }
+
