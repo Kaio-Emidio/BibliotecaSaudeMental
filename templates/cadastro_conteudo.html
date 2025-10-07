@@ -6,52 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Conteúdo</title>
     <link rel="stylesheet" href="static\cadastro_conteudo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <form action="/cadastrar_conteudo" method="post">
-            <label for="Titulo">Titulo:</label> <br>
-            <input type="text" name="Nome_do_conteudo" id="Nome" placeholder="Digite o titulo do seu conteúdo"> <br>
+    <header>
+        <div>
+            <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
+            <h1 class="pag_name">Biblioteca Mental</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}"><i><i class="fa-solid fa-house-chimney"></i></i> Início</a></li>
+            </ul>
+        </nav>
+    </header>
+        <form method="POST" enctype="multipart/form-data">
 
-            <label for="descricao">Sinopse:</label><br>
-            <input type="text" name="descricao" id="desc" placeholder="Escreva sobre o que se trata"><br>
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" id="titulo" required>
+            </div>
 
-            <label for="autor">Autor:</label><br>
-            <input type="text" name="Autor" id="autor" placeholder="Digite o nome do autor"> <br>
+            <div>
+                <label for="sinopse">Sinopse:</label>
+                <textarea name="sinopse" id="sinopse"></textarea>
+            </div>
 
-            <label for="Url">Digite o link:</label><br>
-            <input type="url" name="Caminho_para_conteudo" id="link" placeholder="Digite o link do conteúdo"> <br>
+            <div>
+                <label for="categoria">Categoria:</label>
+                <select name="categoria" id="categoria" required>
+                    <option value="Artigo">Artigo</option>
+                    <option value="Vídeo">Vídeo</option>
+                    <option value="Livro">Livro</option>
+                    <option value="Podcast">Podcast</option>
+                </select>
+            </div>
 
-            <label for="Capa">Capa:</label><br>
-            <input type="url" name="Link_para_capa" id="Link da capa" placeholder="Coloque o caminho da capa"> <br>
+            <div>
+                <label for="ano">Ano:</label>
+                <input type="number" name="ano" id="ano" placeholder="2025" min="1900" max="2099">
+            </div>
 
-            <label for="publicacao">Data de Publicação:</label><br>
-            <input type="text" name="Data_de_publicacao" id="Data" placeholder="Digite o ano de Publicação"> <br>
+            <div>
+                <label for="autor">Autor:</label>
+                <input type="text" name="autor" id="autor">
+            </div>
 
-            <label for="Tipo_de_conteúdo">Tipo de conteúdo:</label><br>
+            <div>
+                <label for="capa">Imagem da Capa:</label>
+                <input type="file" name="capa" id="capa" accept="image/*">
+            </div>
 
-            <input type="radio" id="Video" name="tipo_conteudo" value="Video">
-            <label for="Video">Vídeo</label>
+            <div>
+                <label for="arquivo">Arquivo (PDF, vídeo, áudio, etc):</label>
+                <input type="file" name="arquivo" id="arquivo">
+            </div>
 
-            <input type="radio" id="Podcast" name="tipo_conteudo" value="Podcast">
-            <label for="Podcast">Podcast</label><br>
-
-            <input type="radio" id="Livro" name="tipo_conteudo" value="Livro">
-            <label for="Livro">Livro</label>
-
-            <input type="radio" name="tipo_conteudo" id="Artigo" value="Artigo">
-            <label for="Artigo">Artigo</label><br>
-
-            <label for="categoria">Categoria:</label>
-            <select name="categoria" id="categoria">
-                <option value="1">Depressão</option>
-                <option value="2">Ansiedade</option>
-                <option value="3">Estresse</option>
-            </select> <br>   
-            <button type="submit">Cadastrar</button>
-        </form>
-    </div>
+            <div>
+                <button type="submit">Cadastrar</button>
+            </div>
 </body>
 
 </html>
