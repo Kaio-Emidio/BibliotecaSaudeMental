@@ -21,7 +21,7 @@ header {
   justify-content: space-between;
   padding: 10px;
   row-gap: 20px;
-  width: 100%;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 1080px) {
@@ -37,7 +37,7 @@ header div {
 
 .titulos {
   display: block;
-  color: #3f4264;
+  color: #323553;
 }
 
 .logo {
@@ -48,7 +48,7 @@ header div {
 }
 
 .pag_name {
-  color: #3f4264;
+  color: #323553;
   margin-left: 10px;
 }
 
@@ -60,7 +60,7 @@ ul {
 }
 
 ul li a {
-  color: #084068;
+  color: #323553;
   text-align: center;
   text-decoration: none;
 }
@@ -170,10 +170,8 @@ h2 {
 .card_titulo {
   justify-self: center;
   color: #3f4264;
-  font-size: 15px;
-  margin: 5px;
-  word-spacing: -2px;
-  padding: 3px;
+  font-size: 12px;
+  margin: 0px;
 }
 
 .titulo_cate{
@@ -314,7 +312,7 @@ footer ul {
 .search-input {
     width: 0;
     padding: 5px 10px;
-    border: 2px solid #084068;
+    border: 2px solid #323553;
     background-color: #FFB726;
     border-radius: 25px;
     transition: width 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
@@ -337,6 +335,6 @@ footer ul {
     justify-content: flex-end; 
     align-items: center;
     margin-right: 20px;
-    color: #084068;
+    color: #323553;
 }
 
