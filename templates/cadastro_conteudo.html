@@ -13,7 +13,10 @@
     <header>
         <div>
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
-            <h1 class="pag_name">Biblioteca Mental</h1>
+            <div class="titulos">
+                <h1 class="pag_name">Biblioteca Mental</h1>
+                <h3 style="margin: 10px;"> Bem-vindo(a), {{nome}}!</h3>
+            </div>        
         </div>
         <nav>
             <ul>

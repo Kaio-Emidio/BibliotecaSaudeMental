@@ -35,10 +35,7 @@ header div {
 }
 
 .titulos {
-  display: flex;
-  flex-wrap: wrap;
-  width: 60%;
-  height: auto;
+  display: block;
   color: #3f4264;
 }
 
