@@ -49,3 +49,16 @@ def get_info(id):
     cnx.close()
 
     return resultado
+
+def cad_cont_id(sql, dados):
+    cnx = ConectarBD()
+    cursor = cnx.cursor()
+
+    cursor.execute(sql, dados)
+    cnx.commit()
+
+    last_id = cursor.lastrowid  # pega o ID da última linha inserida
+
+    cnx.close()
+
+    return last_id

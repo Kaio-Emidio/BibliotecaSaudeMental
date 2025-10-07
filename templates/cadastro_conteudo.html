@@ -15,7 +15,7 @@
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
             <div class="titulos">
                 <h1 class="pag_name">Biblioteca Mental</h1>
-                <h3 style="margin: 10px;"> {{nome}}, você pode cadastrar um conteúdo!!</h3>
+                <h3 style="margin: 10px;"> {{nome}}, aqui você pode cadastrar conteúdos!</h3>
             </div>        
         </div>
         <nav>
@@ -43,6 +43,7 @@
                     <option value="Vídeo">Vídeo</option>
                     <option value="Livro">Livro</option>
                     <option value="Podcast">Podcast</option>
+                    <option value="Outro">Outro</option>
                 </select>
             </div>
 
@@ -64,6 +65,16 @@
             <div>
                 <label for="arquivo">Arquivo (PDF, vídeo, áudio, etc):</label>
                 <input type="file" name="arquivo" id="arquivo">
+            </div>
+
+            <div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, msg in messages %}
+                            <div class="alert {{ category }}">{{ msg }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
             </div>
 
             <div>

@@ -51,6 +51,23 @@ header div {
     height: 100vh;
 }
 
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+ul li a {
+  color: #084068;
+  text-align: center;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #c0ba74;
+  height: 50px;
+}
+
 form {
     background-color: #FFB726;
     max-width: 600px;

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-from utils import ConectarBD, InserirAlterarRemover, login, get_info
+from utils import ConectarBD, InserirAlterarRemover, login, get_info, cad_cont_id
+import os
 
 app = Flask(__name__)
 app.secret_key = 'segredo'
@@ -78,26 +79,61 @@ def logout():
 @app.route('/cadastrar_conteudo', methods=['GET', 'POST'])
 def cadastro_conteudo():
     if request.method == 'POST':
-        titulo = request.form.get('Nome_do_conteudo')
-        sinopse = request.form.get('descricao')
-        url = request.form.get('Caminho_para_conteudo')
-        capa = request.form.get('Link_para_capa') 
-        autor = request.form.get('Autor')
-        ano = request.form.get('Data_de_publicacao')
-        tipo = request.form.get('tipo_conteudo')
-        categoria_id = request.form.get('categoria')
+        titulo = request.form['titulo']
+        sinopse = request.form['sinopse']
+        ano = request.form['ano']
+        autor = request.form['autor']
+        categoria = request.form['categoria']
 
-        if capa == '':
-            capa = None
+        id_categoria = {
+            'Outro': 0,
+            'Artigo': 1,
+            'Vídeo': 2,
+            'Livro': 3,
+            'Podcast': 4
+            }.get(categoria, 0)
+        
+        capa_file = request.files.get('capa')
+        arquivo_file = request.files.get('arquivo')
 
-        sql = 'INSERT INTO conteudo (Titulo, Sinopse, URL_Arquivo, Autor, Ano, Tipo, ID_Categoria, Capa) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)'
-        dados = (titulo, sinopse, url, autor, ano, tipo, categoria_id, capa)
+        if ano == '':
+            ano = None
 
-        InserirAlterarRemover(sql, dados)
+        try: 
+            sql = 'INSERT INTO conteudo (Titulo, Sinopse, Ano, Capa, URL_Arquivo, ID_Categoria, Autor) \
+                VALUES (%s, %s, %s, %s, %s, %s, %s)'
+            
+            dados = (titulo, sinopse, ano, 0, None, id_categoria, autor)
 
-        return render_template('cadastro_conteudo.html', sucesso=True)
+            id_conteudo = cad_cont_id(sql, dados)
+            
+            tem_capa = 0
+            url_arquivo = None
 
-    return render_template('cadastro_conteudo.html')
+            if capa_file and capa_file.filename:
+                nome, ext = os.path.splitext(capa_file.filename)
+                novo_nome_capa = f"{id_conteudo}{ext}"
+                caminho_capa = os.path.join('static/assets/capas', novo_nome_capa)
+                capa_file.save(caminho_capa)
+                tem_capa = 1
+            
+            if arquivo_file and arquivo_file.filename:
+                    nome, ext = os.path.splitext(arquivo_file.filename)
+                    novo_nome_arquivo = f"{id_conteudo}{ext}"
+                    caminho_arquivo = os.path.join('static/assets/arquivos', novo_nome_arquivo)
+                    arquivo_file.save(caminho_arquivo)
+                    url_arquivo = caminho_arquivo
+
+
+            sql = "UPDATE conteudo SET Capa = %s, URL_Arquivo = %s WHERE ID_Conteudo = %s"
+            InserirAlterarRemover(sql, (tem_capa, url_arquivo, id_conteudo))
+
+            flash("Conteúdo cadastrado com sucesso!", "success")
+        except Exception as e:
+            flash(f"Erro ao cadastrar: {e}", "danger")
+        return redirect(url_for('cadastro_conteudo'))
+    nome_user = session['nome']
+    return render_template('cadastro_conteudo.html', nome = nome_user)
 
 
 @app.route('/favoritos')
