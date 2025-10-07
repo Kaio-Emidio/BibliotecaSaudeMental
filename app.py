@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-from utils import ConectarBD, InserirAlterarRemover, login, get_info, cad_cont_id
+from utils import ConectarBD, InserirAlterarRemover, login, get_info, cad_cont_id, busca_cards, ajeitar_capa
 import os
 
 app = Flask(__name__)
@@ -22,8 +22,25 @@ def biblioteca():
     id_user = session['id']
     nome_user = session['nome']
 
+    podcasts = busca_cards(4)
+    livros = busca_cards(3)
+    videos = busca_cards(2)
+    artigos = busca_cards(1)
 
-    return render_template('index.html', id=id_user, nome=nome_user)
+    ajeitar_capa(livros)
+    ajeitar_capa(videos)
+    ajeitar_capa(podcasts)
+    ajeitar_capa(artigos)
+
+    return render_template(
+        'index.html',
+        id=id_user,
+        nome=nome_user,
+        livros=livros,
+        videos=videos,
+        artigos=artigos,
+        podcasts=podcasts
+    )
 
 @app.route('/login-usuario', methods=['GET','POST'])
 def login_usuario():
