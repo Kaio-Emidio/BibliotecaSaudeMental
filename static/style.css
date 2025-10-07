@@ -169,11 +169,17 @@ h2 {
 
 .card_titulo {
   justify-self: center;
+  color: #3f4264;
+  font-size: 15px;
+  margin: 5px;
+  word-spacing: -2px;
+  padding: 3px;
 }
 
 .titulo_cate{
   justify-self: center;
   padding-top: 15px;
+  color: #3f4264;
 }
 
 .card_texto {
