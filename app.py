@@ -70,7 +70,7 @@ def login_usuario():
             session['id'] = infos_user['ID_Usuario']
             session['nome'] = infos_user['Nome']
             
-            flash('login feito com sucesso!', 'success')
+            flash('Login feito com sucesso!', 'success')
             return redirect(url_for('biblioteca'))
         else:
             flash('Usuário ou senha incorretos.', 'error')
@@ -104,7 +104,7 @@ def cadastro_usuario():
 @app.route('/logout')
 def logout():
     session.clear()
-    flash('Você saiu da conta.', 'info')
+    flash('Você saiu da sua conta.', 'info')
     return redirect(url_for('login_usuario'))
 
 @app.route('/cadastrar_conteudo', methods=['GET', 'POST'])
