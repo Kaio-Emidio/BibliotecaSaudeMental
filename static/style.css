@@ -194,6 +194,7 @@ h2 {
   margin-top: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px 0;
 }
 
@@ -250,6 +251,7 @@ h2 {
   font-family: 'roboto';
   position: relative; 
   z-index: 10;
+  margin-top: 50px;
 }
 
 .footer-content {
