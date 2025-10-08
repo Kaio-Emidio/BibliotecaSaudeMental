@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-from utils import ConectarBD, InserirAlterarRemover, login, get_info, cad_cont_id, busca_cards, ajeitar_capa
+from utils import ConectarBD, InserirAlterarRemover, login, get_info, cad_cont_id, busca_cards, ajeitar_capa, buscar_conteudos
 import os
 
 app = Flask(__name__)
@@ -172,6 +172,18 @@ def pag_videos():
 @app.route('/artigo')
 def pag_artigos():
     return render_template('artigo.html')
+
+@app.route('/pesquisa')
+def pesquisa():
+    nome_user = session['nome']
+    termo = request.args.get('q', '').strip()
+
+    resultados = []
+    if termo:
+        resultados = buscar_conteudos(termo)
+        ajeitar_capa(resultados)
+
+    return render_template('pesquisa.html', termo=termo, resultados=resultados, nome=nome_user)
 
 if __name__ == '__main__':
     app.run(debug=True)

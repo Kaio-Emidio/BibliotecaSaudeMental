@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa</title>
+    <link rel="stylesheet" href="static\pesquisa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
+            <div class="titulos">
+                <h1 class="pag_name">Biblioteca Mental</h1>
+                <h3 class="hello"> {{nome}}, aqui você pode procurar por conteúdos!</h3>
+            </div>
+        </div>
+        <div>
+            <form action="{{ url_for('pesquisa') }}" method="get">
+                    <input type="search" id="search-input" name="q" class="search-input" placeholder="Pesquisar...">
+                    <label for="search-input" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></label>
+                </form>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}"><i><i class="fa-solid fa-house-chimney"></i></i>Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Resultados para "{{ termo }}"</h1>
+
+    {% if not resultados %}
+        <p>Nenhum resultado encontrado para "{{ termo }}".</p>
+    {% else %}
+        <div class="container">
+            {% for conteudo in resultados %}
+                <div class="card">
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename=conteudo.CapaPath) }}" alt="Capa do livro">
+                </div>
+                <div class="card_titulo">
+                    <h3>{{ conteudo.Titulo }}</h3>
+                </div>
+                <div class="card_texto">
+                    <p><strong>Autor(a): </strong>{{ conteudo.Autor }}</p>
+                    <p><strong>Ano de Publicação: </strong>{{ conteudo.Ano }}</p>
+                    <p><strong>Sinopse:</strong></p>
+                    <p>{{ conteudo.Sinopse}}</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+</body>
+
+</html>
