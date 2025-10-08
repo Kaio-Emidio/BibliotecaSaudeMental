@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisa</title>
-    <link rel="stylesheet" href="static\pesquisa.css">
+    <link rel="stylesheet" href="static\style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="icon" href="static\assets\img\favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -31,7 +32,9 @@
         </div>
     </header>
 
-    <h1 id="resultados">Você pesquisou por: "{{ termo }}"</h1>
+    <div id="resultados">
+        <h1>Você pesquisou por: "{{ termo }}"</h1>
+    </div>
 
     {% if not resultados %}
         <p>Nenhum resultado encontrado para "{{ termo }}".</p>
@@ -52,7 +55,24 @@
                     <p>{{ conteudo.Sinopse}}</p>
                 </div>
                 <div class="card_botao">
-                    <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                    <a href="{{ url_for('arquivo', idconteudo=conteudo.ID_Conteudo) }}">Conheça!</a>
+                    {% if conteudo.ID_Conteudo in favoritos_ids %}
+                    <form action="{{ url_for('desfavoritar', conteudo_id=conteudo.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if conteudo.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </form>
+                    {% else %}
+                    <form action="{{ url_for('favoritar', conteudo_id=conteudo.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if conteudo.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-regular fa-star"></i>
+                        </button>
+                    </form>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

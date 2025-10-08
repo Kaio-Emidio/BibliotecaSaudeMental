@@ -283,7 +283,19 @@ def pesquisa():
         resultados = buscar_conteudos(termo)
         ajeitar_capa(resultados)
 
-    return render_template('pesquisa.html', termo=termo, resultados=resultados, nome=nome_user)
+    id_user = session['id']
+
+    conexao = ConectarBD()
+    cursor = conexao.cursor(dictionary=True)
+    cursor.execute("SELECT ID_Conteudo FROM favorito WHERE ID_Usuario = %s", (id_user,))
+    favoritos = cursor.fetchall()
+
+    favoritos_ids = [int(f['ID_Conteudo']) for f in favoritos]
+
+    cursor.close()
+    conexao.close()
+
+    return render_template('pesquisa.html', termo=termo, resultados=resultados, nome=nome_user, favoritos_ids=favoritos_ids)
 
 @app.route('/arquivo/<int:idconteudo>')
 def arquivo(idconteudo):

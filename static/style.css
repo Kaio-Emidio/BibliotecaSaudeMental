@@ -382,6 +382,12 @@ header div form {
     transition: all 0.3s ease;
 }
 
+#resultados {
+  text-align: center;
+  padding: 20px;
+  color: #FFB726;
+}
+
 .pag_cont button:hover{
     background-color:#3f4264; /* efeito hover mais escuro */
     transform: translateY(-2px); /* leve "flutuação" */

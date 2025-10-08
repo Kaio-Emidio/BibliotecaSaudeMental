@@ -7,6 +7,7 @@
     <title>Biblioteca Mental</title>
     <link rel="stylesheet" href="static\style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="icon" href="static\assets\img\favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -31,7 +32,8 @@
                 <ul>
                     <li><a href="#heroo"><i><i class="fa-solid fa-house-chimney"></i></i> Início</a></li>
                     <li><a href="#sobre"><i class="fa-solid fa-brain"></i> Sobre</a></li>
-                    <li><a href="{{ url_for('pagina_favoritos') }}"><i class="fa-solid fa-star"></i></i> Favoritos</a></li>
+                    <li><a href="{{ url_for('pagina_favoritos') }}"><i class="fa-solid fa-star"></i></i> Favoritos</a>
+                    </li>
                     <li><a href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
                 </ul>
             </nav>
@@ -93,7 +95,8 @@
                     </p>
                 </div>
                 <div class="card_botao">
-                    <a href="https://bvsms.saude.gov.br/30-3-dia-mundial-do-transtorno-bipolar/" target="_blank">Saiba mais</a>
+                    <a href="https://bvsms.saude.gov.br/30-3-dia-mundial-do-transtorno-bipolar/" target="_blank">Saiba
+                        mais</a>
                 </div>
             </div>
             <div class="card">
@@ -144,17 +147,21 @@
                 <div class="card_botao">
                     <a href="{{ url_for('arquivo', idconteudo=bdcard.ID_Conteudo) }}">Conheça!</a>
                     {% if bdcard.ID_Conteudo in favoritos_ids %}
-                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </form>
                     {% else %}
-                        <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-regular fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-regular fa-star"></i>
+                        </button>
+                    </form>
                     {% endif %}
                 </div>
             </div>
@@ -183,17 +190,21 @@
                 <div class="card_botao">
                     <a href="{{ url_for('arquivo', idconteudo=bdcard.ID_Conteudo) }}">Conheça!</a>
                     {% if bdcard.ID_Conteudo in favoritos_ids %}
-                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </form>
                     {% else %}
-                        <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-regular fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-regular fa-star"></i>
+                        </button>
+                    </form>
                     {% endif %}
                 </div>
             </div>
@@ -224,17 +235,21 @@
                 <div class="card_botao">
                     <a href="{{ url_for('arquivo', idconteudo=bdcard.ID_Conteudo) }}">Conheça!</a>
                     {% if bdcard.ID_Conteudo in favoritos_ids %}
-                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </form>
                     {% else %}
-                        <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-regular fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-regular fa-star"></i>
+                        </button>
+                    </form>
                     {% endif %}
                 </div>
             </div>
@@ -261,17 +276,21 @@
                 <div class="card_botao">
                     <a href="{{ url_for('arquivo', idconteudo=bdcard.ID_Conteudo) }}">Conheça!</a>
                     {% if bdcard.ID_Conteudo in favoritos_ids %}
-                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-solid fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </form>
                     {% else %}
-                        <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                <i class="fa-regular fa-star"></i>
-                            </button>
-                        </form>
+                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post"
+                        class="fav-form">
+                        <button type="submit"
+                            class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-regular fa-star"></i>
+                        </button>
+                    </form>
                     {% endif %}
                 </div>
             </div>
@@ -301,7 +320,7 @@
                     <li><a href="#artigo">Artigos</a></li>
                     <li><a href="{{ url_for('pagina_favoritos') }}">Favoritos</a></li>
 
-                    
+
 
                 </ul>
             </div>
