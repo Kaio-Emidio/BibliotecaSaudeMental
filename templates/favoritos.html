@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favoritos</title>
-    <link rel="stylesheet" href="/static/favoritos.css">
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body>
@@ -48,7 +48,12 @@
                     <p>{{ bdcard.Sinopse }}</p>
                 </div>
                 <div class="card_botao">
-                    <input type="button" value="Acessar" onclick="window.open('{{ bdcard.URL_Arquivo }}', '_blank')">
+                    <a href="{{ url_for('arquivo', idconteudo=bdcard.ID_Conteudo) }}">Conheça!</a>
+                    <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                        <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-solid fa-x" style="color: red;"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             {% endfor %}

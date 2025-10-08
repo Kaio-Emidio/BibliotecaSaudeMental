@@ -258,7 +258,20 @@ def pag_conteudos():
         conteudos = []
 
     ajeitar_capa(conteudos)
-    return render_template('conteudos.html', tipo=tipo, conteudos=conteudos)
+
+    id_user = session['id']
+
+    conexao = ConectarBD()
+    cursor = conexao.cursor(dictionary=True)
+    cursor.execute("SELECT ID_Conteudo FROM favorito WHERE ID_Usuario = %s", (id_user,))
+    favoritos = cursor.fetchall()
+
+    favoritos_ids = [int(f['ID_Conteudo']) for f in favoritos]
+
+    cursor.close()
+    conexao.close()
+
+    return render_template('conteudos.html', tipo=tipo, conteudos=conteudos, favoritos_ids=favoritos_ids)
 
 @app.route('/pesquisa')
 def pesquisa():
@@ -288,10 +301,8 @@ def arquivo(idconteudo):
     if not url_arquivo:
         return "Arquivo não encontrado.", 404
 
-    # 🧠 Corrige caminho (troca \ por /)
     url_arquivo = url_arquivo.replace("\\", "/")
 
-    # Detecta extensão
     extensao = os.path.splitext(url_arquivo)[1].lower()
 
     if extensao in [".mp4", ".webm", ".ogg"]:
