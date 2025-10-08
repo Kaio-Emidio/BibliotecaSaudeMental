@@ -62,3 +62,99 @@
     height: 50px;
     
   }
+.text_erro{
+  color: black;
+  display: flex;
+  justify-self: center;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px #FFB726(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 16px;
+  flex-direction: row;
+  background-color: #fae795;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: none;
+  text-align: justify;
+  max-height: 600px;
+  padding-bottom: 10px;
+}
+
+.card div {
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card_img {
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_titulo {
+  color: #3f4264;
+  text-align: center;
+  margin: 10px 15px 5px 15px;
+}
+
+.card_titulo h3 {
+  margin: 0;
+}
+.titulo_cate{
+  justify-self: center;
+  padding-top: 15px;
+  color: #3f4264;
+}
+
+.card_texto {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #CC8E1E transparent;
+  height: 200px;
+  margin: 0px 20px 0px 20px;
+}
+
+.card_botao input[type="button"] {
+  background-color: #FFB726;
+  color: rgb(45, 5, 53);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  justify-self: center;
+  transition: 0.3s;
+}
+
+.card_botao input[type="button"]:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(168, 144, 6, 0.897)15;
+}
+
+.container {
+    display: flex;           /* Ativa flexbox */
+    flex-wrap: wrap;         /* Permite quebrar linha se não couber */
+    justify-content: flex-start;  /* Alinha os cards à esquerda */
+    gap: 20px;               /* Espaço entre os cards */
+}
+
+.card {
+    flex: 0 1 300px;         /* Largura fixa de 300px, mas pode encolher se necessário */
+    display: flex;
+    flex-direction: column;
+}
