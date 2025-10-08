@@ -68,6 +68,12 @@
   justify-self: center;
 }
 
+p {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
 .card {
   width: 300px;
   border: 1px solid #ccc;
@@ -129,7 +135,7 @@
   margin: 0px 20px 0px 20px;
 }
 
-.card_botao a {
+.card_botao input[type="button"] {
   background-color: #FFB726;
   color: rgb(45, 5, 53);
   padding: 10px;
@@ -141,7 +147,7 @@
   transition: 0.3s;
 }
 
-.card_botao a:hover {
+.card_botao input[type="button"]:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(168, 144, 6, 0.897)15;
 }

@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ tipo }} - Biblioteca Mental</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <h1 id="tituconte">{{ tipo }}s</h1>
-        <a href="{{ url_for('index') }}">← Voltar</a>
+
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}"><i class="fa-solid fa-left-long"></i> Voltar</a></li>
+            </ul>
+        </nav>
+        
     </header>
 
     <div class="container">
@@ -25,12 +32,20 @@
                 <p>{{ bdcard.Sinopse }}</p>
             </div>
             <div class="card_botao">
-                <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
-                    <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                        {% if bdcard.ID_Conteudo in favoritos_ids %}★{% else %}☆{% endif %}
-                    </button>
-                </form>
+                <a href="{{ url_for('arquivo', idconteudo=bdcard.ID_Conteudo) }}">Conheça!</a>
+                {% if bdcard.ID_Conteudo in favoritos_ids %}
+                    <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                        <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </form>
+                {% else %}
+                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                        <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                            <i class="fa-regular fa-star"></i>
+                        </button>
+                    </form>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
