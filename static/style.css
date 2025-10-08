@@ -316,9 +316,8 @@ footer ul {
   color: #084068;
 }
 
-.search-container {
+header div form {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .search-input {
@@ -343,9 +342,9 @@ footer ul {
     top: 0;
     z-index: 1;
     display: flex;
-    /* flex-wrap: wrap; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin-right: 20px;
     color: #323553;
 }

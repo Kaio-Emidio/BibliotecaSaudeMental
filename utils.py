@@ -94,3 +94,29 @@ def ajeitar_capa(conteudos):
             capa_path = "assets/img/no_image.jpg"
 
         cont['CapaPath'] = capa_path  # adiciona o caminho no próprio dicionário
+
+def buscar_conteudos(termo):
+    cnx = ConectarBD()
+    cursor = cnx.cursor(dictionary=True)
+
+    sql = """
+        SELECT *,
+            CASE
+                WHEN Titulo LIKE %s THEN 3
+                WHEN Autor LIKE %s THEN 2
+                WHEN Sinopse LIKE %s THEN 1
+                ELSE 0
+            END AS relevancia
+        FROM conteudo
+        WHERE Titulo LIKE %s OR Autor LIKE %s OR Sinopse LIKE %s
+        ORDER BY relevancia DESC, Data_Inclusao DESC;
+    """
+
+    
+    termo_busca = f"%{termo}%"
+    cursor.execute(sql, (termo_busca, termo_busca, termo_busca, termo_busca, termo_busca, termo_busca))
+
+    resultados = cursor.fetchall()
+
+    cnx.close()
+    return resultados

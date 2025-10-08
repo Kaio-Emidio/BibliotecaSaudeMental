@@ -16,7 +16,7 @@
             <div class="titulos">
                 <h1 class="pag_name">Biblioteca Mental</h1>
                 <h3 class="hello"> {{nome}}, aqui você pode cadastrar conteúdos!</h3>
-            </div>        
+            </div>
         </div>
         <nav>
             <ul>
@@ -24,62 +24,63 @@
             </ul>
         </nav>
     </header>
-        <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
 
-            <div>
-                <label for="titulo">Título:</label>
-                <input type="text" name="titulo" id="titulo" placeholder="Título do seu conteúdo" required>
-            </div>
+        <div>
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo" placeholder="Título do seu conteúdo" required>
+        </div>
 
-            <div>
-                <label for="sinopse">Sinopse:</label>
-                <textarea name="sinopse" id="sinopse" placeholder="Escreva sobre o que se trata"></textarea>
-            </div>
+        <div>
+            <label for="sinopse">Sinopse:</label>
+            <textarea name="sinopse" id="sinopse" placeholder="Escreva sobre o que se trata"></textarea>
+        </div>
 
-            <div>
-                <label for="categoria">Categoria:</label>
-                <select name="categoria" id="categoria" required>
-                    <option value="Artigo">Artigo</option>
-                    <option value="Vídeo">Vídeo</option>
-                    <option value="Livro">Livro</option>
-                    <option value="Podcast">Podcast</option>
-                    <option value="Outro">Outro</option>
-                </select>
-            </div>
+        <div>
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria" required>
+                <option value="Artigo">Artigo</option>
+                <option value="Vídeo">Vídeo</option>
+                <option value="Livro">Livro</option>
+                <option value="Podcast">Podcast</option>
+                <option value="Outro">Outro</option>
+            </select>
+        </div>
 
-            <div>
-                <label for="ano">Ano:</label>
-                <input type="number" name="ano" id="ano" placeholder="2025" min="1900" max="2099">
-            </div>
+        <div>
+            <label for="ano">Ano:</label>
+            <input type="number" name="ano" id="ano" placeholder="2025" min="1900" max="2099">
+        </div>
 
-            <div>
-                <label for="autor">Autor:</label>
-                <input type="text" name="autor" id="autor" placeholder="Nome do autor">
-            </div>
+        <div>
+            <label for="autor">Autor:</label>
+            <input type="text" name="autor" id="autor" placeholder="Nome do autor">
+        </div>
 
-            <div>
-                <label for="capa">Imagem da Capa:</label>
-                <input type="file" name="capa" id="capa" accept="image/*">
-            </div>
+        <div>
+            <label for="capa">Imagem da Capa:</label>
+            <input type="file" name="capa" id="capa" accept="image/*">
+        </div>
 
-            <div>
-                <label for="arquivo">Arquivo (PDF, vídeo, áudio, etc):</label>
-                <input type="file" name="arquivo" id="arquivo">
-            </div>
+        <div>
+            <label for="arquivo">Arquivo (PDF, vídeo, áudio, etc):</label>
+            <input type="file" name="arquivo" id="arquivo">
+        </div>
 
-            <div>
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, msg in messages %}
-                            <div class="alert {{ category }}">{{ msg }}</div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
+        <div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, msg in messages %}
+            <div class="alert {{ category }}">{{ msg }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
 
-            <div>
-                <button type="submit">Cadastrar</button>
-            </div>
+        <div>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
 </body>
 
 </html>
