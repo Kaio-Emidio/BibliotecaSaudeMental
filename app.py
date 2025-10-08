@@ -190,6 +190,28 @@ def favoritar(conteudo_id):
 
     return redirect(url_for('biblioteca'))  # volta para a página da biblioteca
 
+@app.route('/desfavoritar/<int:conteudo_id>', methods=['POST'])
+def desfavoritar(conteudo_id):
+    if 'id' not in session:
+        flash('Você precisa fazer login primeiro.', 'error')
+        return redirect(url_for('login_usuario'))
+
+    id_user = session['id']
+
+    conexao = ConectarBD()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "DELETE FROM favorito WHERE ID_Usuario = %s AND ID_Conteudo = %s;",
+        (id_user, conteudo_id)
+    )
+    conexao.commit()
+
+    cursor.close()
+    conexao.close()
+
+    return redirect(url_for('biblioteca'))  # volta para a página da biblioteca
+
 
 # -------- Página de favoritos --------
 @app.route('/favoritos')

@@ -158,3 +158,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.notfav {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #FFB726;
+}

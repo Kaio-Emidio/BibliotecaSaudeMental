@@ -146,15 +146,19 @@
                 </div>
                 <div class="card_botao">
                     <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                    {% if bdcard.ID_Conteudo in favoritos_ids %}
+                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
                             <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                {% if bdcard.ID_Conteudo in favoritos_ids %}
-                                    ★
-                                {% else %}
-                                    ☆
-                                {% endif %}
+                                <i class="fa-solid fa-star"></i>
                             </button>
-                    </form>
+                        </form>
+                    {% else %}
+                        <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -181,15 +185,19 @@
                 </div>
                 <div class="card_botao">
                     <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                    {% if bdcard.ID_Conteudo in favoritos_ids %}
+                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                                <i class="fa-solid fa-star"></i>
+                            </button>
+                        </form>
+                    {% else %}
                         <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
                             <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                {% if bdcard.ID_Conteudo in favoritos_ids %}
-                                    ★
-                                {% else %}
-                                    ☆
-                                {% endif %}
+                                <i class="fa-regular fa-star"></i>
                             </button>
-                    </form>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -218,15 +226,19 @@
                 </div>
                 <div class="card_botao">
                     <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                    {% if bdcard.ID_Conteudo in favoritos_ids %}
+                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
                             <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                {% if bdcard.ID_Conteudo in favoritos_ids %}
-                                    ★
-                                {% else %}
-                                    ☆
-                                {% endif %}
+                                <i class="fa-solid fa-star"></i>
                             </button>
-                    </form>
+                        </form>
+                    {% else %}
+                        <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -251,15 +263,19 @@
                 </div>
                 <div class="card_botao">
                     <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                    <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                    {% if bdcard.ID_Conteudo in favoritos_ids %}
+                        <form action="{{ url_for('desfavoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
                             <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
-                                {% if bdcard.ID_Conteudo in favoritos_ids %}
-                                    ★
-                                {% else %}
-                                    ☆
-                                {% endif %}
+                                <i class="fa-solid fa-star"></i>
                             </button>
-                    </form>
+                        </form>
+                    {% else %}
+                        <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                            <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
