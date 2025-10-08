@@ -23,10 +23,10 @@ def biblioteca():
     id_user = session['id']
     nome_user = session['nome']
 
-    podcasts = busca_cards(4)
-    livros = busca_cards(3)
-    videos = busca_cards(2)
-    artigos = busca_cards(1)
+    podcasts = busca_cards(4, 4)
+    livros = busca_cards(3, 4)
+    videos = busca_cards(2, 4)
+    artigos = busca_cards(1, 4)
 
     ajeitar_capa(livros)
     ajeitar_capa(videos)
@@ -223,13 +223,13 @@ def pag_conteudos():
     tipo = request.args.get('tipo', 'podcast')  # padrão: podcast
 
     if tipo == 'podcast':
-        conteudos = busca_cards(4)
+        conteudos = busca_cards(4, None)
     elif tipo == 'livro':
-        conteudos = busca_cards(3)
+        conteudos = busca_cards(3, None)
     elif tipo == 'video':
-        conteudos = busca_cards(2)
+        conteudos = busca_cards(2, None)
     elif tipo == 'artigo':
-        conteudos = busca_cards(1)
+        conteudos = busca_cards(1, None)
     else:
         conteudos = []
 

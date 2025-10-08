@@ -63,12 +63,19 @@ def cad_cont_id(sql, dados):
 
     return last_id
 
-def busca_cards(id_categoria):
+def busca_cards(id_categoria, limite):
     cnx = ConectarBD()
 
     cursor = cnx.cursor(dictionary=True)
 
-    cursor.execute('select ID_Conteudo, Titulo, Sinopse, URL_Arquivo from conteudo where ID_Categoria = %s limit 4;', (id_categoria,))
+    sql = 'select ID_Conteudo, Titulo, Sinopse, URL_Arquivo from conteudo where ID_Categoria = %s'
+    dados = (id_categoria,)
+
+    if limite != None:
+        sql += ' limit %s'
+        dados = id_categoria, limite
+
+    cursor.execute(sql, dados)
 
     resultado = cursor.fetchall()
 
