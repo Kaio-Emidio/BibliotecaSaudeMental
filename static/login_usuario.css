@@ -34,11 +34,11 @@ header div {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #c58607;
+  background-color: #3f4264;
 }
 
 .pag_name {
-  color: #3f4264;
+  color: #323553;
   margin-left: 10px;
 }
 
@@ -49,7 +49,7 @@ ul {
 }
 
 ul li a {
-  color: #084068;
+  color: #323553;
   text-align: center;
   text-decoration: none;
 }
@@ -74,15 +74,19 @@ form {
   justify-items: center;
 }
 
+.entrar{
+  color: #323553;
+}
+
 .inputs input{
-  border: solid 1px #084068;
+  border: solid 1px #323553;
   margin: 5px 0px 5px;
   padding: 10px;
   background-color: transparent;
 }
 
 .submit{
-  background-color: #084068;
+  background-color: #323553;
   padding: 10px 15px;
   margin: 5px 5px;
   border-radius: 20px;

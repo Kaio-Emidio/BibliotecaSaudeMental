@@ -50,10 +50,10 @@ header div {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background-color: #c58607;
+  background-color: #3f4264;
 }
 
 .pag_name {
@@ -290,7 +290,7 @@ footer ul {
 
 .LINK li a {
   text-decoration: none; 
-  color: #084068; 
+  color: #323553; 
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
@@ -372,7 +372,7 @@ header div form {
 
 .pag_cont button{
     display: flex; justify-self: center;
-    background-color:#084068; 
+    background-color:#3f4264; 
     color: white;
     border: none;
     padding: 12px 25px;
@@ -380,6 +380,7 @@ header div form {
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: 30px;
 }
 
 #resultados {
@@ -389,7 +390,7 @@ header div form {
 }
 
 .pag_cont button:hover{
-    background-color:#3f4264; /* efeito hover mais escuro */
+    background-color:#323553; /* efeito hover mais escuro */
     transform: translateY(-2px); /* leve "flutuação" */
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
