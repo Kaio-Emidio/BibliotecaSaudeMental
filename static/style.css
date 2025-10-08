@@ -198,7 +198,7 @@ h2 {
   padding: 10px 0;
 }
 
-.card_botao input[type="button"] {
+.card_botao a {
   background-color: #FFB726;
   color: rgb(45, 5, 53);
   padding: 10px 20px;
@@ -209,7 +209,7 @@ h2 {
   transition: 0.3s;
 }
 
-.card_botao input[type="button"]:hover {
+.card_botao a:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(168, 144, 6, 0.5);
 }
@@ -362,12 +362,12 @@ header div form {
 }
 
 .fav-btn:hover {
-    color: gold;
+    color: #FFB726;
     transform: scale(1.2);
 }
 
-.fav-btn.favoritado {
-    color: gold;
+.fav-btn.favoritado i {
+    color: #FFB726;
 }
 
 .pag_cont button{

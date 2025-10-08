@@ -144,14 +144,16 @@ def cadastro_conteudo():
             if capa_file and capa_file.filename:
                 nome, ext = os.path.splitext(capa_file.filename)
                 novo_nome_capa = f"{id_conteudo}{ext}"
-                caminho_capa = os.path.join('static/assets/capas', novo_nome_capa)
+                caminho_capa = os.path.join('static', novo_nome_capa)
                 capa_file.save(caminho_capa)
                 tem_capa = 1
             
+            upload_arquivos = os.path.join('static', 'assets', 'capas')
+
             if arquivo_file and arquivo_file.filename:
                     nome, ext = os.path.splitext(arquivo_file.filename)
                     novo_nome_arquivo = f"{id_conteudo}{ext}"
-                    caminho_arquivo = os.path.join('static/assets/arquivos', novo_nome_arquivo)
+                    caminho_arquivo = os.path.join(upload_arquivos, novo_nome_arquivo)
                     arquivo_file.save(caminho_arquivo)
                     url_arquivo = caminho_arquivo
 
@@ -269,6 +271,42 @@ def pesquisa():
         ajeitar_capa(resultados)
 
     return render_template('pesquisa.html', termo=termo, resultados=resultados, nome=nome_user)
+
+@app.route('/arquivo/<int:idconteudo>')
+def arquivo(idconteudo):
+    cnx = ConectarBD()
+    cursor = cnx.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM conteudo WHERE ID_Conteudo = %s", (idconteudo,))
+    conteudo = cursor.fetchone()
+    cnx.close()
+
+    if not conteudo:
+        return "Conteúdo não encontrado.", 404
+
+    url_arquivo = conteudo.get("URL_Arquivo")
+
+    if not url_arquivo:
+        return "Arquivo não encontrado.", 404
+
+    # 🧠 Corrige caminho (troca \ por /)
+    url_arquivo = url_arquivo.replace("\\", "/")
+
+    # Detecta extensão
+    extensao = os.path.splitext(url_arquivo)[1].lower()
+
+    if extensao in [".mp4", ".webm", ".ogg"]:
+        tipo = "video"
+    elif extensao in [".mp3", ".wav", ".aac"]:
+        tipo = "audio"
+    elif extensao in [".pdf"]:
+        tipo = "pdf"
+    elif extensao in [".jpg", ".jpeg", ".png", ".gif", ".webp"]:
+        tipo = "imagem"
+    else:
+        tipo = "outro"
+
+    return render_template("arquivo.html", conteudo=conteudo, tipo=tipo, url_arquivo=url_arquivo)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

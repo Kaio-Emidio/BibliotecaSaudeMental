@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+    <link rel="stylesheet" href="/static/arquivo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+       
+        <div class="cont_logo">
+            <img src="/static/assets/img/logo_img.png" alt="logo" class="logo">
+            <div class="titulos">
+                <h1 class="pag_name">Biblioteca Mental - {{ conteudo.Titulo }}</h1>
+            </div>   
+
+        </div>
+
+            <nav>
+                <ul>
+                    <li><a href="/"><i><i class="fa-solid fa-house-chimney"></i></i>Início</a></li>
+                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <p>{{ conteudo.Sinopse }}</p>
+
+    <div class="arquivo-container" style="text-align:center; margin-top:20px;">
+
+        {% if tipo == "video" %}
+            <video controls width="80%">
+                <source src="{{ '/' + url_arquivo }}" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+    
+        {% elif tipo == "audio" %}
+            <audio controls style="width:80%;">
+                <source src="{{ '/' + url_arquivo }}" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+    
+        {% elif tipo == "pdf" %}
+            <iframe src="{{ '/' + url_arquivo }}" width="100%" height="600px" style="border:none;">
+            </iframe>
+    
+        {% elif tipo == "imagem" %}
+            <img src="{{ '/' + url_arquivo }}" alt="{{ conteudo.Titulo }}" style="max-width:90%; border-radius:10px;">
+    
+        {% else %}
+            <p>Tipo de arquivo não suportado: {{ url_arquivo }}</p>
+        {% endif %}
+    
+    </div>
+    
+</body>
+
+</html>
