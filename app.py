@@ -19,6 +19,7 @@ def biblioteca():
     if 'id' not in session:
         flash('Você precisa fazer login primeiro.', 'error')
         return redirect(url_for('inicio'))
+
     id_user = session['id']
     nome_user = session['nome']
 
@@ -32,6 +33,16 @@ def biblioteca():
     ajeitar_capa(podcasts)
     ajeitar_capa(artigos)
 
+    conexao = ConectarBD()
+    cursor = conexao.cursor(dictionary=True)
+    cursor.execute("SELECT ID_Conteudo FROM favorito WHERE ID_Usuario = %s", (id_user,))
+    favoritos = cursor.fetchall()
+
+    favoritos_ids = [int(f['ID_Conteudo']) for f in favoritos]
+
+    cursor.close()
+    conexao.close()
+
     return render_template(
         'index.html',
         id=id_user,
@@ -39,8 +50,10 @@ def biblioteca():
         livros=livros,
         videos=videos,
         artigos=artigos,
-        podcasts=podcasts
+        podcasts=podcasts,
+        favoritos_ids=favoritos_ids  
     )
+
 
 @app.route('/login-usuario', methods=['GET','POST'])
 def login_usuario():
@@ -153,9 +166,56 @@ def cadastro_conteudo():
     return render_template('cadastro_conteudo.html', nome = nome_user)
 
 
+# -------- Favoritar um conteúdo --------
+@app.route('/favoritar/<int:conteudo_id>', methods=['POST'])
+def favoritar(conteudo_id):
+    if 'id' not in session:
+        flash('Você precisa fazer login primeiro.', 'error')
+        return redirect(url_for('login_usuario'))
+
+    id_user = session['id']
+
+    conexao = ConectarBD()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "INSERT IGNORE INTO favorito (ID_Usuario, ID_Conteudo) VALUES (%s, %s)",
+        (id_user, conteudo_id)
+    )
+    conexao.commit()
+
+    cursor.close()
+    conexao.close()
+
+    return redirect(url_for('biblioteca'))  # volta para a página da biblioteca
+
+
+# -------- Página de favoritos --------
 @app.route('/favoritos')
-def favoritos():
-    return render_template('favoritos.html')
+def pagina_favoritos():
+    if 'id' not in session:
+        flash('Você precisa fazer login primeiro.', 'error')
+        return redirect(url_for('login_simples'))
+
+    id_user = session['id']
+    nome_user = session['nome']
+
+    conexao = ConectarBD()
+    cursor = conexao.cursor(dictionary=True)
+    cursor.execute("""
+        SELECT c.ID_Conteudo, c.Titulo, c.Sinopse, c.URL_Arquivo, c.ID_Categoria, c.Capa
+        FROM conteudo c
+        INNER JOIN favorito f ON c.ID_Conteudo = f.ID_Conteudo
+        WHERE f.ID_Usuario = %s
+    """, (id_user,))
+    favoritos = cursor.fetchall()
+    cursor.close()
+    conexao.close()
+
+    ajeitar_capa(favoritos)
+
+    return render_template('favoritos.html', favoritos=favoritos, nome=nome_user)
+
 
 @app.route('/podcasts')
 def pag_podcast():

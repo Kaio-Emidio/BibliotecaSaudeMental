@@ -350,3 +350,25 @@ footer ul {
     color: #323553;
 }
 
+.fav-form {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.fav-btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.fav-btn:hover {
+    color: gold;
+    transform: scale(1.2);
+}
+
+.fav-btn.favoritado {
+    color: gold;
+}
