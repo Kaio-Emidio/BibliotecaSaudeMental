@@ -255,7 +255,7 @@ h2 {
 .footer-content {
   display: flex;
   flex-wrap: wrap; 
-  justify-content: space-around; 
+  justify-content: center; 
   max-width: 100%; 
   margin: 0 auto;
   padding: 0 20px;
@@ -285,10 +285,6 @@ footer ul {
   scroll-margin-top: 100px;
 }
 
-.LINK {
-
-  flex-wrap: wrap;
-}
 
 .LINK li a {
   text-decoration: none; 
@@ -388,4 +384,11 @@ header div form {
     background-color:#3f4264; /* efeito hover mais escuro */
     transform: translateY(-2px); /* leve "flutuação" */
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#tituconte{
+  text-transform: uppercase;
+  color: #323553;
+  font-family: 'roboto';
+  
 }

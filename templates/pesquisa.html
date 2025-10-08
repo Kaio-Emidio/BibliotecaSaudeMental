@@ -15,7 +15,7 @@
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
             <div class="titulos">
                 <h1 class="pag_name">Biblioteca Mental</h1>
-                <h3 class="hello"> {{nome}}, aqui você pode procurar por conteúdos!</h3>
+                <h3 class="hello"> {{nome}},&nbsp;aqui você pode procurar por conteúdos!</h3>
             </div>
         </div>
         <div>
@@ -31,7 +31,7 @@
         </div>
     </header>
 
-    <h1>Resultados para "{{ termo }}"</h1>
+    <h1 id="resultados">Você pesquisou por: "{{ termo }}"</h1>
 
     {% if not resultados %}
         <p>Nenhum resultado encontrado para "{{ termo }}".</p>
