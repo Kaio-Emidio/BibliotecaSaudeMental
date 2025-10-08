@@ -11,22 +11,22 @@
 
 <body>
     <header>
-       
+
         <div class="cont_logo">
             <img src="{{ url_for('static', filename='assets/img/logo_img.png') }}" alt="logo" class="logo">
             <div class="titulos">
                 <h1 class="pag_name">Biblioteca Mental</h1>
-                <h3 style="margin: 10px;"> Bem-vindo(a),  {{nome}}!</h3>
-            </div>   
+                <h3 style="margin: 10px;"> Bem-vindo(a), {{nome}}!</h3>
+            </div>
 
         </div>
 
         <div>
-            <div class="search_container">
-                <input type="text" id="search-input" class="search-input" placeholder="Pesquisar...">
-                <label for="search-input" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></label>  
-            </div>
-    
+            <form class="search_container" action="/buscar" method="get">
+                <input type="search" id="search-input" name="q" class="search-input" placeholder="Pesquisar...">
+                <label for="search-input" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></label>
+            </form>
+
             <nav>
                 <ul>
                     <li><a href="#heroo"><i><i class="fa-solid fa-house-chimney"></i></i>Inicio</a></li>
@@ -38,7 +38,7 @@
         </div>
     </header>
     <section id="heroo">
-    <div class="hero"></div>
+        <div class="hero"></div>
     </section>
     <section id="sobre">
         <h1 style="margin: 20px;">Sobre</h1>
@@ -59,67 +59,74 @@
             cada pessoa a procurar ajuda profissional, como os CAPS e outros serviços de saúde, reforçando que cuidar da
             mente é essencial para viver com equilíbrio e bem-estar.</p>
     </section>
-    
+
     <section id="catego">
-    <h1 id="categorias-title">Categorias</h1>
-    <div class="container">
-        <div class="card">
-            <div class="titulo_cate">
-                <h3>Ansiedade</h3>
+        <h1 id="categorias-title">Categorias</h1>
+        <div class="container">
+            <div class="card">
+                <div class="card_titulo">
+                    <h3>Ansiedade</h3>
+                </div>
+                <div class="card_texto">
+                    <p>
+                        Ansiedade é um sentimento natural de preocupação e medo em relação a eventos futuros,
+                        mas se torna um transtorno quando é excessiva e prejudica o dia a dia, com sintomas
+                        físicos e mentais intensos. As causas podem envolver fatores biológicos (genética),
+                        psicológicos (experiências de vida, estresse), ambientais (condições sociais, pandemias),
+                        e do estilo de vida (uso de substâncias como álcool e cafeína).
+                    </p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Saiba mais"
+                        onclick="window.open('https://bvsms.saude.gov.br/ansiedade/')">
+                </div>
             </div>
-            <div class="card_texto">
-                <p>
-                    Ansiedade é um sentimento natural de preocupação e medo em relação a eventos futuros, 
-                    mas se torna um transtorno quando é excessiva e prejudica o dia a dia, com sintomas 
-                    físicos e mentais intensos. As causas podem envolver fatores biológicos (genética), 
-                    psicológicos (experiências de vida, estresse), ambientais (condições sociais, pandemias),
-                    e do estilo de vida (uso de substâncias como álcool e cafeína).
-                </p>
+            <div class="card">
+                <div class="card_titulo">
+                    <h3>Bipolaridade</h3>
+                </div>
+                <div class="card_texto">
+                    <p>
+                        Distúrbio associado a alterações de humor que variam entre dois pólos: o depressivo e o maníaco.
+                        Trata-se de um transtorno crônico cuja causa exata é desconhecida. Mas acredita-se que
+                        seja influenciado por uma combinação multifatorial, envolvendo influências genéticas e
+                        ambientais.
+                    </p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Saiba mais"
+                        onclick="window.open('https://bvsms.saude.gov.br/30-3-dia-mundial-do-transtorno-bipolar/')">
+                </div>
             </div>
-            <div class="card_botao">
-                <input type="button" value="Saiba mais" onclick="window.open('https://bvsms.saude.gov.br/ansiedade/')">
+            <div class="card">
+                <div class="card_titulo">
+                    <h3>Depressão</h3>
+                </div>
+                <div class="card_texto">
+                    <p>
+                        Distúrbio mental caracterizado por depressão persistente ou perda de interesse em atividades,
+                        prejudicando
+                        significativamente o dia a dia. As causas possíveis incluem uma combinação de origens
+                        biológicas, psicológicas
+                        e sociais de angústia. A sensação persistente de tristeza ou
+                        perda de interesse pode levar a sintomas físicos e comportamentais como alterações no sono,
+                        apetite, energia,
+                        concentração e autoestima. A depressão também pode ser associada a pensamentos suicidas.
+                    </p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Saiba mais"
+                        onclick="window.open('https://bvsms.saude.gov.br/depressao-4/')">
+                </div>
             </div>
         </div>
-        <div class="card">
-            <div class="titulo_cate">
-                <h3>Bipolaridade</h3>
-            </div>
-            <div class="card_texto">
-                <p>
-                    Distúrbio associado a alterações de humor que variam entre dois pólos: o depressivo e o maníaco.
-                    Trata-se de um transtorno crônico cuja causa exata é desconhecida. Mas acredita-se que 
-                    seja influenciado por uma combinação multifatorial, envolvendo influências genéticas e ambientais.
-                </p>
-            </div>
-            <div class="card_botao">
-                <input type="button" value="Saiba mais" onclick="window.open('https://bvsms.saude.gov.br/30-3-dia-mundial-do-transtorno-bipolar/')">
-            </div>
-        </div>
-        <div class="card">
-            <div class="titulo_cate">
-                <h3>Depressão</h3>
-            </div>
-            <div class="card_texto">
-                <p>
-                    Distúrbio mental caracterizado por depressão persistente ou perda de interesse em atividades, prejudicando 
-                    significativamente o dia a dia. As causas possíveis incluem uma combinação de origens biológicas, psicológicas
-                    e sociais de angústia. A sensação persistente de tristeza ou 
-                    perda de interesse pode levar a sintomas físicos e comportamentais como alterações no sono, apetite, energia,
-                    concentração e autoestima. A depressão também pode ser associada a pensamentos suicidas.
-                </p>
-            </div>
-            <div class="card_botao">
-                <input type="button" value="Saiba mais" onclick="window.open('https://bvsms.saude.gov.br/depressao-4/')">
-            </div>
-        </div>
-    </div>
     </section>
 
 
     <div class="botao_cont">
         <a href="{{ url_for('cadastro_conteudo') }}"><i class="fa-solid fa-plus"></i></a>
     </div>
-    
+
     <h1 id="acess-conteudos"> Acesse nossos conteúdos;</h1>
 
     <section id="podca">
@@ -127,20 +134,20 @@
 
         <div class="container">
             {% for bdcard in podcasts %}
-                <div class="card">
-                    <div class="card_img">
-                        <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
-                    </div>
-                    <div class="card_titulo">
-                        <h3>{{ bdcard.Titulo }}</h3>
-                    </div>
-                    <div class="card_texto">
-                        <p>{{ bdcard.Sinopse}}</p>
-                    </div>
-                    <div class="card_botao">
-                        <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                    </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
                 </div>
+                <div class="card_titulo">
+                    <h3>{{ bdcard.Titulo }}</h3>
+                </div>
+                <div class="card_texto">
+                    <p>{{ bdcard.Sinopse}}</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                </div>
+            </div>
             {% endfor %}
         </div>
     </section>
@@ -152,24 +159,24 @@
 
         <div class="container">
             {% for bdcard in livros %}
-                <div class="card">
-                    <div class="card_img">
-                        <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
-                    </div>
-                    <div class="card_titulo">
-                        <h3>{{ bdcard.Titulo }}</h3>
-                    </div>
-                    <div class="card_texto">
-                        <p>{{ bdcard.Sinopse}}</p>
-                    </div>
-                    <div class="card_botao">
-                        <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                    </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
                 </div>
+                <div class="card_titulo">
+                    <h3>{{ bdcard.Titulo }}</h3>
+                </div>
+                <div class="card_texto">
+                    <p>{{ bdcard.Sinopse}}</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                </div>
+            </div>
             {% endfor %}
         </div>
     </section>
-    
+
 
 
     <!-- Alterar para videos -->
@@ -179,20 +186,20 @@
 
         <div class="container">
             {% for bdcard in videos %}
-                <div class="card">
-                    <div class="card_img">
-                        <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
-                    </div>
-                    <div class="card_titulo">
-                        <h3>{{ bdcard.Titulo }}</h3>
-                    </div>
-                    <div class="card_texto">
-                        <p>{{ bdcard.Sinopse}}</p>
-                    </div>
-                    <div class="card_botao">
-                        <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                    </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
                 </div>
+                <div class="card_titulo">
+                    <h3>{{ bdcard.Titulo }}</h3>
+                </div>
+                <div class="card_texto">
+                    <p>{{ bdcard.Sinopse}}</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                </div>
+            </div>
             {% endfor %}
         </div>
     </section>
@@ -202,50 +209,51 @@
 
         <div class="container">
             {% for bdcard in artigos %}
-                <div class="card">
-                    <div class="card_img">
-                        <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
-                    </div>
-                    <div class="card_titulo">
-                        <h3>{{ bdcard.Titulo }}</h3>
-                    </div>
-                    <div class="card_texto">
-                        <p>{{ bdcard.Sinopse}}</p>
-                    </div>
-                    <div class="card_botao">
-                        <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
-                    </div>
+            <div class="card">
+                <div class="card_img">
+                    <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do livro">
                 </div>
+                <div class="card_titulo">
+                    <h3>{{ bdcard.Titulo }}</h3>
+                </div>
+                <div class="card_texto">
+                    <p>{{ bdcard.Sinopse}}</p>
+                </div>
+                <div class="card_botao">
+                    <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                </div>
+            </div>
             {% endfor %}
         </div>
     </section>
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-column info-column">
-                <h3>BIBLIOTECA   MENTAL</h3>
-                <p class="frase-footer">A grande jornada para desvendar os mistérios mais profundos: a nossa própria mente.</p>
-        
+                <h3>BIBLIOTECA MENTAL</h3>
+                <p class="frase-footer">A grande jornada para desvendar os mistérios mais profundos: a nossa própria
+                    mente.</p>
+
             </div>
-    
+
             <div>
                 <h4>MAPA DO SITE</h4>
-                
+
                 <ul class="LINK">
-                    <li><a href="#heroo">Tela principal</a></li> 
-                    <li><a href="#sobre">Sobre</a></li> 
-                    <li><a href="#catego">Categorias</a></li> 
-                    <li><a href="#podca">Podcasts</a></li> 
+                    <li><a href="#heroo">Tela principal</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#catego">Categorias</a></li>
+                    <li><a href="#podca">Podcasts</a></li>
                     <li><a href="#livro">Livros</a></li>
-                    <li><a href="#video">Vídeos</a></li> 
+                    <li><a href="#video">Vídeos</a></li>
                     <li><a href="#artigo">Artigos</a></li>
-            
+
                 </ul>
             </div>
-    
-    
-        
+
+
+
     </footer>
-    
+
 
 </body>
 
