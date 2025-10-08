@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tipo }} - Biblioteca Mental</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ tipo }}</h1>
+        <a href="{{ url_for('index') }}">← Voltar</a>
+    </header>
+
+    <div class="container">
+        {% for bdcard in conteudos %}
+        <div class="card">
+            <div class="card_img">
+                <img src="{{ url_for('static', filename=bdcard.CapaPath) }}" alt="Capa do {{ tipo }}">
+            </div>
+            <div class="card_titulo">
+                <h3>{{ bdcard.Titulo }}</h3>
+            </div>
+            <div class="card_texto">
+                <p>{{ bdcard.Sinopse }}</p>
+            </div>
+            <div class="card_botao">
+                <input type="button" value="Conheça!" onclick="window.open('youtube.com', '_blank')">
+                <form action="{{ url_for('favoritar', conteudo_id=bdcard.ID_Conteudo) }}" method="post" class="fav-form">
+                    <button type="submit" class="fav-btn {% if bdcard.ID_Conteudo in favoritos_ids %}favoritado{% endif %}">
+                        {% if bdcard.ID_Conteudo in favoritos_ids %}★{% else %}☆{% endif %}
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

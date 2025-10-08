@@ -372,3 +372,21 @@ footer ul {
 .fav-btn.favoritado {
     color: gold;
 }
+
+.pag_cont button{
+    display: flex; justify-self: center;
+    background-color:#084068; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;        
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pag_cont button:hover{
+    background-color:#3f4264; /* efeito hover mais escuro */
+    transform: translateY(-2px); /* leve "flutuação" */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}

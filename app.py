@@ -33,6 +33,7 @@ def biblioteca():
     ajeitar_capa(podcasts)
     ajeitar_capa(artigos)
 
+
     conexao = ConectarBD()
     cursor = conexao.cursor(dictionary=True)
     cursor.execute("SELECT ID_Conteudo FROM favorito WHERE ID_Usuario = %s", (id_user,))
@@ -217,21 +218,23 @@ def pagina_favoritos():
     return render_template('favoritos.html', favoritos=favoritos, nome=nome_user)
 
 
-@app.route('/podcasts')
-def pag_podcast():
-    return render_template('podcast.html')
+@app.route('/conteudos')
+def pag_conteudos():
+    tipo = request.args.get('tipo', 'podcast')  # padrão: podcast
 
-@app.route('/livros')
-def pag_livros():
-    return render_template('livros.html')
+    if tipo == 'podcast':
+        conteudos = busca_cards(4)
+    elif tipo == 'livro':
+        conteudos = busca_cards(3)
+    elif tipo == 'video':
+        conteudos = busca_cards(2)
+    elif tipo == 'artigo':
+        conteudos = busca_cards(1)
+    else:
+        conteudos = []
 
-@app.route('/video')
-def pag_videos():
-    return render_template('video.html')
-
-@app.route('/artigo')
-def pag_artigos():
-    return render_template('artigo.html')
+    ajeitar_capa(conteudos)
+    return render_template('conteudos.html', tipo=tipo, conteudos=conteudos)
 
 if __name__ == '__main__':
     app.run(debug=True)

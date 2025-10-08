@@ -159,6 +159,7 @@
             </div>
             {% endfor %}
         </div>
+        <a class="pag_cont" href="{{ url_for('pag_conteudos', tipo='podcast') }}"><button>Podcasts</button></a>
     </section>
 
     <!-- Alterar para livros -->
@@ -193,6 +194,7 @@
             </div>
             {% endfor %}
         </div>
+        <a class="pag_cont" href="{{ url_for('pag_conteudos', tipo='livro') }}"><button>Livros</button></a>
     </section>
 
 
@@ -229,6 +231,7 @@
             </div>
             {% endfor %}
         </div>
+        <a class="pag_cont" href="{{ url_for('pag_conteudos', tipo='video') }}"><button>Vídeos</button></a>
     </section>
 
     <section id="artigo">
@@ -261,6 +264,7 @@
             </div>
             {% endfor %}
         </div>
+        <a class="pag_cont" href="{{ url_for('pag_conteudos', tipo='artigo') }}"><button>Artigos</button></a>
     </section>
     <footer class="main-footer">
         <div class="footer-content">
